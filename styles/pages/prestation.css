@@ -1,0 +1,55 @@
+/* NOS-PRESTATIONS */
+/* Entete-prestation */
+#prestation #entete-prestation h1,
+#prestation #entete-prestation .h5 > p {
+  color: var(--noir-style);
+}
+#prestation #entete-prestation h1 > span {
+  color: var(--rouge-orange) !important;
+}
+/* expertise */
+#prestation #expertise h2,
+#prestation #expertise p,
+#prestation #expertise .objectif h2 {
+  color: var(--noir-style);
+}
+#prestation #expertise h2 > span,
+#prestation #expertise .objectif h2 > span {
+  color: var(--rouge-orange) !important;
+}
+#prestation #expertise .expertise-card-recto h3 {
+  color: var(--rouge-orange);
+}
+#prestation #expertise .expertise-card-verso h3 {
+  color: var(--bleu-fonce);
+}
+#prestation #expertise .expertise-card-recto p,
+#prestation #expertise .objectif h4 {
+  color: var(--noir-paragraphe);
+}
+#prestation .projet h3 {
+  color: var(--blanc);
+}
+/* methodologie */
+#prestation #methodologie h2,
+#prestation #methodologie h4 {
+  color: var(--blanc);
+}
+#prestation .projet h2,
+#prestation .projet p,
+#prestation #methodologie h3,
+#prestation #methodologie h2 > span {
+  color: var(--noir-style) !important;
+}
+#prestation .methodologie-board h4 {
+  color: var(--vert);
+}
+#prestation .methodologie-board p {
+  color: var(--noir-paragraphe);
+}
+#prestation .projet h2 > span {
+  color: var(--bleu-clair) !important;
+}
+#prestation .projet p > span {
+  color: var(--rouge-orange) !important;
+}

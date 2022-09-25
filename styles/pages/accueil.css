@@ -1,0 +1,103 @@
+/* ACCUEIL */
+/* Accueil-entete */
+#accueil #accueil-entete h1,
+#accueil #accueil-entete p {
+  color: var(--blanc) !important;
+}
+/* nous */
+#accueil #nous h2,
+#accueil #nous h3 {
+  color: var(--bleu-fonce) !important;
+}
+#accueil #nous h2 > span,
+#accueil #nous h3 > span,
+#accueil #nous .span > h3 {
+  color: var(--bleu-clair) !important;
+}
+#accueil #image-deco-accueil {
+  animation: fadeIn 3s linear 1 forwards;
+}
+/* Projet */
+#accueil #projet h2,
+#accueil #projet p {
+  color: var(--noir-style);
+}
+#accueil #projet h2 > span,
+#accueil #projet p > span {
+  color: var(--rouge-orange) !important;
+}
+/* Pourquoi */
+#accueil #pourquoi .creer h3 {
+  color: var(--blanc);
+}
+#accueil #pourquoi .creer h3 > span {
+  color: var(--vert) !important;
+}
+#accueil #pourquoi .creer p {
+  color: var(--blanc) !important;
+}
+#accueil #pourquoi .refondre h3 {
+  color: var(--noir-style);
+}
+#accueil #pourquoi .refondre h3 > span {
+  color: var(--rouge-orange) !important;
+}
+#accueil #pourquoi .refondre p {
+  color: var(--noir-style) !important;
+}
+/* Valeurs */
+#accueil #valeurs h2,
+#accueil #valeurs h3,
+#accueil #valeurs p {
+  color: var(--blanc);
+}
+#accueil #valeurs h2 > span,
+#accueil #valeurs p > span {
+  color: var(--vert) !important;
+}
+#accueil #valeurs .front h4 {
+  color: var(--rouge-orange);
+}
+#accueil #valeurs .back p {
+  color: var(--bleu-fonce);
+}
+/* Realisations */
+#accueil #realisations h2,
+#accueil #realisations h3,
+#accueil #realisations p {
+  color: var(--noir-style);
+}
+#accueil #realisations h2 > span,
+#accueil #realisations p > span {
+  color: var(--rouge-orange) !important;
+}
+/* Services */
+#accueil #services h2,
+#accueil #services h3,
+#accueil #services p {
+  color: var(--blanc);
+}
+#accueil #services h4 {
+  color: var(--noir-paragraphe);
+}
+#accueil #services h2 > span {
+  color: var(--bleu-clair) !important;
+}
+/* Missions */
+#accueil #missions h2,
+#accueil #missions h3,
+#accueil #missions p {
+  color: var(--noir-style);
+}
+#accueil #missions h2 > span {
+  color: var(--vert) !important;
+}
+#accueil #missions .projet h2 > span {
+  color: var(--bleu-clair) !important;
+}
+#accueil #missions .projet p > span {
+  color: var(--rouge-orange) !important;
+}
+#accueil #missions .services p {
+  color: var(--noir-paragraphe);
+}

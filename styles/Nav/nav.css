@@ -1,0 +1,11 @@
+/* Style Nav */
+#nav .li a {
+  color: var(--noir-style);
+}
+#nav .li a:last-child {
+  color: var(--rouge-orange);
+}
+#nav .li a:hover,
+#nav .li .active {
+  color: var(--bleu-clair);
+}

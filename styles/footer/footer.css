@@ -1,0 +1,10 @@
+/* Style Footer */
+#footer,
+#footer nav > .li a {
+  color: var(--blanc);
+}
+#footer .mail:hover,
+#footer .contact:hover,
+#footer .nav > .li a:hover {
+  color: var(--vert);
+}

@@ -1,0 +1,13 @@
+// Url backend strapi
+export const URL_API_ABOUT = "/about"
+export const URL_API_HOME = "/home"
+export const URL_API_LOGOS = "/logo"
+export const URL_API_HAMBURGER = "/hamburger"
+export const URL_API_FOOTER = "/footer"
+export const URL_API_SCROLLTOP = "/scroll-top"
+export const URL_API_ERROR_PAGE = "/error-page"
+export const URL_API_CONTACT = "/contact"
+export const URL_API_SUCCESS_FORM = "/success-form"
+export const URL_API_PRESTATIONS = "/prestation"
+export const URL_API_REALISATIONS = "/realisation"
+export const URL_API_DEVIS = "/devi"

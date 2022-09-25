@@ -1,0 +1,518 @@
+/* Imports internes */
+@import "./Nav/nav.css";
+@import "./footer/footer.css";
+@import "./range/multi-range.css";
+@import "./cards/card.css";
+@import "./animations/animations.css";
+@import "./pages/accueil.css";
+@import "./pages/about.css";
+@import "./pages/prestation.css";
+@import "./pages/realisations.css";
+@import "./pages/contact.css";
+@import "./pages/devis.css";
+@import "./animations/progress-bar.css";
+/* imports Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* colors */
+  --transparent: rgba(255, 255, 255, 0);
+  --bleu-clair: #4087ff;
+  --blanc: #ffffff;
+  --bleu-fonce: #2e437d;
+  --bleu-fonce-transparent: rgba(46, 67, 125, 0.8);
+  --bleu-fonce-transparent-2: rgba(46, 67, 125, 0.95);
+  --bleu-fond: rgba(248, 250, 255, 1);
+  --bg-bleu-fonce: linear-gradient(
+    0deg,
+    rgba(46, 67, 125, 0.85),
+    rgba(46, 67, 125, 0.85)
+  );
+  --bg-noir: linear-gradient(
+    0deg,
+    rgba(50, 50, 50, 0.85),
+    rgba(50, 50, 50, 0.85)
+  );
+  --vert: #41ead4;
+  --vert-transparent: rgba(65, 234, 212, 0.95);
+  --rouge-orange: #fc5050;
+  --fond-orange: #fff5f5;
+  --noir-style: #3f3f3f;
+  --vert-fond: #ebfffc;
+  --fond-gris: rgba(250, 250, 251, 0.95);
+  --blanc-transparent: rgba(255, 255, 255, 0.65);
+  --blanc-transparent-2: rgba(255, 255, 255, 0.9);
+  --gris: #6b7f82;
+  --bleu-fond: #f8faff;
+  --noir-paragraphe: #505050;
+
+  /* Font-size */
+  /* h1 */
+  --size-2xl-h1: 2.375rem;
+  --size-xl-h1: 2.125rem;
+  --size-lg-h1: 1.5rem;
+  --size-md-h1: 1.375rem;
+  --size-sm-h1: 1.25rem;
+
+  /* h2 */
+  --size-2xl-h2: 2.125rem;
+  --size-xl-h2: 1.875rem;
+  --size-lg-h2: 1.5rem;
+  --size-md-h2: 1.375rem;
+  --size-sm-h2: 1.25rem;
+
+  /* h3 */
+  --size-2xl-h3: 2.125rem;
+  --size-xl-h3: 1.875rem;
+  --size-lg-h3: 1.375rem;
+  --size-md-h3: 1.25rem;
+  --size-sm-h3: 1.125rem;
+
+  /* h4 */
+  --size-2xl-h4: 0.938rem;
+  --size-xl-h4: 0.813rem;
+  --size-lg-h4: 1.438rem;
+  --size-md-h4: 1.313rem;
+  --size-sm-h4: 1.188rem;
+
+  /*  .h5 > p */
+  --size-2xl-h5: 1.6rem;
+  --size-xl-h5: 1.6rem;
+  --size-lg-h5: 1.75rem;
+  --size-md-h5: 1.375rem;
+  --size-sm-h5: 1.25rem;
+
+  /* p */
+  --size-2xl-p: 1.313rem;
+  --size-xl-p: 1.188rem;
+  --size-lg-p: 1.125rem;
+  --size-md-p: 1rem;
+  --size-sm-p: 0.875rem;
+
+  /* .competences */
+  --size-2xl-competences: 1.1rem;
+  --size-xl-competences: 0.875rem;
+  --size-lg-competences: 0.75rem;
+  --size-md-competences: 0.625rem;
+  --size-sm-competences: 0.5rem;
+
+  /* text-button */
+  --size-2xl-text-button: 1.25rem;
+  --size-xl-text-button: 1.125rem;
+  --size-lg-text-button: 1.188rem;
+  --size-md-text-button: 1.063rem;
+  --size-sm-text-button: 0.938rem;
+
+  /* Nav > a */
+  --size-2xl-nav-a: 1.25rem;
+  --size-xl-nav-a: 0.9rem;
+  --size-lg-nav-a: 0.8rem;
+  --size-md-nav-a: 1.253rem;
+  --size-sm-nav-a: 1.128rem;
+
+  /* Font-weight */
+  /* h1 */
+  --weight-h1: 400;
+  --weight-h1-phone: 700;
+  /* h2 */
+  --weight-h2: 400;
+  --weight-h2-phone: 300;
+  /* h3 */
+  --weight-h3: 700;
+  /* h4 */
+  --weight-h4: 700;
+  --weight-h4-phone: 400;
+  /*  .h5 > p */
+  --weight-h5: 700;
+  --weight-h5-phone: 400;
+  /* p */
+  --weight-p: 400;
+  /* text-button */
+  --weight-text-button: 700;
+  /* nav > a */
+  --weight-nav-a: 300;
+
+  /* Line-height */
+  /* h1 */
+  --height-h1: 2.813rem;
+  --height-h1-phone: 1.725rem;
+  /* h2 */
+  --height-h2: 2.625rem;
+  --height-h2-phone: 1.688rem;
+  /* h3 */
+  --height-h3: 2.563rem;
+  --height-h3-phone: 1.375rem;
+  /* h4 */
+  --height-h4: 1.5rem;
+  --height-h4-phone: 1.438rem;
+  /*  .h5 > p */
+  --height-h5: 2.58rem;
+  --height-h5-phone: 1.738rem;
+  /* p */
+  --height-p: 2.05rem;
+  --height-p-phone: 1.8rem;
+  /* text-button */
+  --height-text-button: 1.188rem;
+  /* nav > a */
+  --height-nav-a: 1.375rem;
+  --height-nav-a-phone: 1.188rem;
+
+  /* letter-spacing */
+  /* h1 */
+  --spacing-h1: 0.05em;
+  --spacing-h1-phone: 0.04em;
+  /* h2 */
+  --spacing-h2: 0.06em;
+  --spacing-h2-phone: 0.04em;
+  /* h3 */
+  --spacing-h3: 0.04em;
+  /* h4 */
+  --spacing-h4: 0.04em;
+  --spacing-h4-phone: 0.03em;
+  /*  .h5 > p */
+  --spacing-h5: 0.04em;
+  --spacing-h5-phone: "inherit";
+  /* p */
+  --spacing-p: 0.015em;
+  --spacing-p-phone: 0.01em;
+  /* text-button */
+  --spacing-text-button: 0.04em;
+}
+
+@layer base {
+  @font-face {
+    font-family: "Humanist521BT";
+    src: url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.eot");
+    src: url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.eot?#iefix")
+        format("embedded-opentype"),
+      url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.woff2")
+        format("woff2"),
+      url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.woff")
+        format("woff"),
+      url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.ttf")
+        format("truetype"),
+      url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.svg#Humanst521 BT")
+        format("svg");
+  }
+  @font-face {
+    font-family: "Rowdies";
+    src: url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.eot");
+    src: url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.eot?#iefix")
+        format("embedded-opentype"),
+      url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.woff2")
+        format("woff2"),
+      url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.woff")
+        format("woff"),
+      url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.ttf")
+        format("truetype"),
+      url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.svg#Rowdies")
+        format("svg");
+  }
+
+  @layer utilities {
+    /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply no-scrollbar;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  /* Fonts */
+  h1 {
+    font-family: "Humanist521BT";
+    font-weight: var(--weight-h1);
+    line-height: var(--height-h1);
+    letter-spacing: var(--spacing-h1);
+  }
+
+  h2 {
+    font-family: "Humanist521BT";
+    font-weight: var(--weight-h2);
+    line-height: var(--height-h2);
+    letter-spacing: var(--spacing-h2);
+  }
+
+  h3 {
+    font-family: "Humanist521BT";
+    font-weight: var(--weight-h3);
+    line-height: var(--height-h3);
+    letter-spacing: var(--spacing-h3);
+  }
+
+  h4 {
+    font-family: "Rowdies";
+    font-weight: var(--weight-h4);
+    line-height: var(--height-h4);
+    letter-spacing: var(--spacing-h4);
+  }
+
+  .h5 > p {
+    font-family: "Humanist521BT";
+    font-weight: var(--weight-h5);
+    line-height: var(--height-h5);
+    letter-spacing: var(--spacing-h5);
+  }
+
+  p,
+  a,
+  .competences,
+  .message-erreur,
+  ::placeholder,
+  .error-msg {
+    font-family: "Humanist521BT";
+    font-weight: var(--weight-p);
+    line-height: var(--height-p);
+    letter-spacing: var(--spacing-p);
+  }
+
+  button > span {
+    font-family: "Humanist521BT";
+    font-weight: var(--weight-text-button);
+    line-height: var(--height-text-button);
+    letter-spacing: var(--spacing-text-button);
+  }
+
+  nav a {
+    font-family: "Rowdies";
+    font-weight: var(--weight-nav-a);
+    line-height: var(--height-nav-a);
+  }
+
+  /* MEDIA QUERIES!! */
+
+  /* min 1281px == xl */
+  @media only screen and (min-width: 1281px) {
+    h1 {
+      font-size: var(--size-2xl-h1);
+    }
+    h2 {
+      font-size: var(--size-2xl-h2);
+    }
+    h3 {
+      font-size: var(--size-2xl-h3);
+    }
+    h4 {
+      font-size: var(--size-2xl-h4);
+    }
+    .h5 > p {
+      font-size: var(--size-2xl-h5);
+    }
+    .competences {
+      font-size: var(--size-2xl-competences);
+    }
+    p,
+    a,
+    ::placeholder,
+    .error-msg {
+      font-size: var(--size-2xl-p);
+    }
+    button > span {
+      font-size: var(--size-2xl-text-button);
+    }
+    nav a {
+      font-size: var(--size-2xl-nav-a);
+    }
+  }
+
+  /* max 1280px == xl */
+  @media only screen and (max-width: 1280px) {
+    h1 {
+      font-size: var(--size-xl-h1);
+    }
+    h2 {
+      font-size: var(--size-xl-h2);
+    }
+    h3 {
+      font-size: var(--size-xl-h3);
+    }
+    h4 {
+      font-size: var(--size-xl-h4);
+    }
+    .h5 > p {
+      font-size: var(--size-xl-h5);
+    }
+    .competences {
+      font-size: var(--size-xl-competences);
+    }
+    p,
+    a,
+    ::placeholder,
+    .error-msg {
+      font-size: var(--size-xl-p);
+    }
+    button > span {
+      font-size: var(--size-xl-text-button);
+    }
+    nav a {
+      font-size: var(--size-xl-nav-a);
+    }
+  }
+
+  /* max 1024px == lg */
+  @media only screen and (max-width: 1024px) {
+    h1 {
+      font-size: var(--size-lg-h1);
+      font-weight: var(--weight-h1-phone);
+      line-height: var(--height-h1-phone);
+      letter-spacing: var(--spacing-h1-phone);
+    }
+    h2 {
+      font-size: var(--size-lg-h2);
+      font-family: "Rowdies";
+      font-weight: var(--weight-h2-phone);
+      line-height: var(--height-h2-phone);
+      letter-spacing: var(--spacing-h2-phone);
+    }
+    h3 {
+      font-size: var(--size-lg-h3);
+      line-height: var(--height-h3-phone);
+    }
+    h4 {
+      font-size: var(--size-lg-h4);
+      font-weight: var(--weight-h4-phone);
+      line-height: var(--height-h4-phone);
+      letter-spacing: var(--spacing-h4-phone);
+    }
+    .h5 > p {
+      font-size: var(--size-lg-h5);
+      font-weight: var(--weight-h5-phone);
+      line-height: var(--height-h5-phone);
+    }
+    .competences {
+      font-size: var(--size-lg-competences);
+    }
+    p,
+    a,
+    ::placeholder,
+    .error-msg {
+      font-size: var(--size-lg-p);
+      line-height: var(--height-p-phone);
+      letter-spacing: var(--spacing-p-phone);
+    }
+    button > span {
+      font-size: var(--size-lg-text-button);
+    }
+    nav a {
+      font-size: var(--size-lg-nav-a);
+      line-height: var(--height-nav-a-phone);
+    }
+  }
+
+  /* max 768px == md */
+  @media only screen and (max-width: 768px) {
+    h1 {
+      font-size: var(--size-md-h1);
+      font-weight: var(--weight-h1-phone);
+      line-height: var(--height-h1-phone);
+      letter-spacing: var(--spacing-h1-phone);
+    }
+    h2 {
+      font-size: var(--size-md-h2);
+      font-family: "Rowdies";
+      font-weight: var(--weight-h2-phone);
+      line-height: var(--height-h2-phone);
+      letter-spacing: var(--spacing-h2-phone);
+    }
+    h3 {
+      font-size: var(--size-md-h3);
+      line-height: var(--height-h3-phone);
+    }
+    h4 {
+      font-size: var(--size-md-h4);
+      font-weight: var(--weight-h4-phone);
+      line-height: var(--height-h4-phone);
+      letter-spacing: var(--spacing-h4-phone);
+    }
+    .h5 > p {
+      font-size: var(--size-md-h5);
+      font-weight: var(--weight-h5-phone);
+      line-height: var(--height-h5-phone);
+    }
+    .competences {
+      font-size: var(--size-md-competences);
+    }
+    p,
+    a,
+    ::placeholder,
+    .error-msg {
+      font-size: var(--size-md-p);
+      line-height: var(--height-p-phone);
+      letter-spacing: var(--spacing-p-phone);
+    }
+    button > span {
+      font-size: var(--size-md-text-button);
+    }
+    nav a {
+      font-size: var(--size-md-nav-a);
+      line-height: var(--height-nav-a-phone);
+    }
+  }
+
+  /* max 640px == sm */
+  @media only screen and (max-width: 640px) {
+    h1 {
+      font-size: var(--size-sm-h1);
+      font-weight: var(--weight-h1-phone);
+      line-height: var(--height-h1-phone);
+      letter-spacing: var(--spacing-h1-phone);
+    }
+    h2 {
+      font-size: var(--size-sm-h2);
+      font-family: "Rowdies";
+      font-weight: var(--weight-h2-phone);
+      line-height: var(--height-h2-phone);
+      letter-spacing: var(--spacing-h2-phone);
+    }
+    h3 {
+      font-size: var(--size-sm-h3);
+      line-height: var(--height-h3-phone);
+    }
+    h4 {
+      font-size: var(--size-sm-h4);
+      font-weight: var(--weight-h4-phone);
+      line-height: var(--height-h4-phone);
+      letter-spacing: var(--spacing-h4-phone);
+    }
+    .h5 > p {
+      font-size: var(--size-sm-h5);
+      font-weight: var(--weight-h5-phone);
+      line-height: var(--height-h5-phone);
+    }
+    .competences {
+      font-size: var(--size-sm-competences);
+    }
+    p,
+    a,
+    ::placeholder,
+    .error-msg {
+      font-size: var(--size-sm-p);
+      line-height: var(--height-p-phone);
+      letter-spacing: var(--spacing-p-phone);
+    }
+    button > span {
+      font-size: var(--size-sm-text-button);
+    }
+    nav a {
+      font-size: var(--size-sm-nav-a);
+      line-height: var(--height-nav-a-phone);
+    }
+  }
+}

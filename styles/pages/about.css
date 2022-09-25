@@ -1,0 +1,56 @@
+/* A-PROPOS */
+/* Entete-a-propos */
+#a-propos #entete-a-propos h1,
+#a-propos #entete-a-propos p {
+  color: var(--blanc);
+}
+#a-propos #entete-a-propos h1 > span {
+  color: var(--rouge-orange) !important;
+}
+/* Binome */
+#a-propos #binome h2 {
+  color: var(--bleu-fonce);
+}
+#a-propos #binome h3,
+#a-propos #binome p {
+  color: var(--noir-style);
+}
+/* intro-presentation */
+#a-propos #intro-presentation h2,
+#a-propos #intro-presentation h4,
+#a-propos #intro-presentation p {
+  color: var(--noir-style);
+}
+#a-propos #intro-presentation h3 {
+  color: var(--rouge-orange);
+}
+#a-propos #intro-presentation h2 > span {
+  color: var(--rouge-orange) !important;
+}
+/* presentation */
+#a-propos #presentation h3,
+#a-propos #presentation h4 {
+  color: var(--rouge-orange);
+}
+#a-propos #presentation p,
+#a-propos #presentation .outils > h4 {
+  color: var(--noir-style);
+}
+#a-propos #presentation .competences {
+  color: var(--blanc);
+}
+/* mission */
+#a-propos #mission h2,
+#a-propos #mission h3,
+#a-propos .devis h3 {
+  color: var(--blanc);
+}
+#a-propos #mission h2 > span {
+  color: var(--rouge-orange) !important;
+}
+#a-propos #mission .card-mission h3 {
+  color: var(--noir-style);
+}
+#a-propos #mission .card-mission p {
+  color: var(--noir-paragraphe);
+}

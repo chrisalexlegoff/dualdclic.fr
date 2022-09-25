@@ -1,0 +1,29 @@
+/* CONTACT */
+/* entete-contact */
+#contact #entete-contact h1,
+#contact #entete-contact .h5 > p {
+  color: var(--blanc);
+}
+#contact #entete-contact h1 > span {
+  color: var(--vert) !important;
+}
+/* formulaire-contact */
+#contact #formulaire-contact h2,
+#contact #formulaire-contact p {
+  color: var(--noir-style);
+}
+#contact #formulaire-contact h2 > span {
+  color: var(--vert) !important;
+}
+#contact #formulaire-contact .message-erreur {
+  color: var(--rouge-orange) !important;
+}
+/* informations-contact */
+#contact #informations-contact h2,
+#contact #informations-contact p,
+#contact #informations-contact a {
+  color: var(--noir-style);
+}
+#contact #informations-contact a:hover {
+  color: var(--rouge-orange);
+}

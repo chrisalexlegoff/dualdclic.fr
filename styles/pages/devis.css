@@ -1,0 +1,44 @@
+/* DEMANDER UN DEVIS */
+/* entete-devis */
+#devis #entete-devis h1,
+#devis #entete-devis .h5 {
+  color: var(--blanc);
+}
+#devis #entete-devis h1 > span {
+  color: var(--vert) !important;
+}
+/* preambule */
+#devis #preambule h2,
+#devis #preambule p,
+#devis #preambule a {
+  color: var(--noir-style);
+}
+/* formulaire-devis */
+#devis #formulaire-devis h2 {
+  color: var(--noir-style);
+}
+#devis #formulaire-devis h2 > span {
+  color: var(--vert) !important;
+}
+#devis #formulaire-devis h3 {
+  color: var(--rouge-orange);
+}
+#devis #formulaire-devis p {
+  color: var(--noir-paragraphe);
+}
+#devis #formulaire-devis .message-erreur {
+  color: var(--rouge-orange);
+}
+/* pourquoi-devis */
+#devis #pourquoi-devis h2 {
+  color: var(--blanc);
+}
+#devis #pourquoi-devis h2 > span {
+  color: var(--vert) !important;
+}
+#devis #pourquoi-devis h3 {
+  color: var(--noir-style);
+}
+#devis #pourquoi-devis p {
+  color: var(--noir-paragraphe);
+}
