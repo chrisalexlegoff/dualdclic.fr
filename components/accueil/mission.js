@@ -33,7 +33,7 @@ const Mission = ({ mission }) => {
           {mission.services.map((miss, index) => (
             <div
               key={miss.id}
-              className="services w-[360px] flex flex-col justify-center items-center rounded-xl bg-fond-gris pt-16 m-4"
+              className="services w-auto md:w-[360px] flex flex-col justify-center items-center rounded-xl bg-fond-gris pt-16 m-4"
             >
               {LazyImage(
                 miss.icons.data.attributes,
