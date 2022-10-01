@@ -65,7 +65,7 @@ const AccueilEntete = ({ header }) => {
         </div>
         <div
           id="image-deco-accueil"
-          className="row-start-4 lg:row-span-3 justify-items-center mx-auto w-[250px] lg:w-2/3"
+          className="row-start-4 lg:row-span-3 justify-items-center mx-auto w-[250px] lg:w-2/3 md:block hidden"
         >
           {imageDeco}
         </div>
