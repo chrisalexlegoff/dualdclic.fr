@@ -51,7 +51,7 @@ const AccueilEntete = ({ header }) => {
           className="lg:row-start-3 mx-auto w-3/4"
           dangerouslySetInnerHTML={{ __html: header.paragraphe }}
         ></div>
-        <div className="row-start-5 lg:row-start-4 mx-auto w-3/4">
+        <div className="md:row-start-5 row-start-4 lg:row-start-4 mx-auto w-3/4">
           <Link href="/demander-un-devis">
             <a>
               <button className="group bg-transparent hover:bg-blanc w-full md:w-1/2 h-20 mx-auto lg:m-0 block rounded-lg border-2 border-blanc">
@@ -65,11 +65,11 @@ const AccueilEntete = ({ header }) => {
         </div>
         <div
           id="image-deco-accueil"
-          className="row-start-4 lg:row-span-3 justify-items-center mx-auto w-[250px] lg:w-2/3"
+          className="row-start-4 lg:row-span-3 justify-items-center mx-auto w-[250px] lg:w-2/3 md:block hidden"
         >
           {imageDeco}
         </div>
-        <div className="lg:col-span-2 animate-pulse">
+        <div className="md:row-start-6 row-start-5 lg:col-span-2 animate-pulse">
           <Link href="/#nous">
             <a className="flex flex-col items-center">
               <span className="mb-2">{/* {header.enSavoirPlus.text} */}</span>
