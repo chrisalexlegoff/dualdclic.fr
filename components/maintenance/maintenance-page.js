@@ -25,10 +25,18 @@ const MaintenancePage = ({ maintenance }) => {
         </div>
         <div className="lg:w-1/2 w-3/4 mx-auto">
           <div
+            className="uppercase"
+            dangerouslySetInnerHTML={{
+              __html: maintenance.maintenance.titre,
+            }}
+          ></div>
+        </div>
+        <div className="lg:w-1/2 w-3/4 mx-auto">
+          <div
             id="text-maintenance"
             className="uppercase"
             dangerouslySetInnerHTML={{
-              __html: maintenance.maintenance.text,
+              __html: maintenance.maintenance.paragraphe,
             }}
           ></div>
         </div>
