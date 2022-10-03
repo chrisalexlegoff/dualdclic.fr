@@ -1,0 +1,10 @@
+/* MAINTENANCE */
+#maintenance #text-maintenance h3 {
+  color: var(--blanc);
+}
+#maintenance #text-maintenance h3 > span {
+  color: var(--rouge-orange) !important;
+}
+#maintenance #text-maintenance a:hover {
+  color: var(--rouge-orange) !important;
+}

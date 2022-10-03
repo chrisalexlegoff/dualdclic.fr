@@ -4,19 +4,16 @@ import LazyImage from "./../../lib/lazy-images"
 const Informations = ({ informations }) => {
   const adressIcon = LazyImage(
     informations.iconAdresse.data.attributes,
-    "icon adresse",
     "lazy",
     "80px"
   )
   const telIcon = LazyImage(
     informations.iconTelephone.data.attributes,
-    "icon adresse",
     "lazy",
     "80px"
   )
   const mailIcon = LazyImage(
     informations.iconMail.data.attributes,
-    "icon adresse",
     "lazy",
     "80px"
   )

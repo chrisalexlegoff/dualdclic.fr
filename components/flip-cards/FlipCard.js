@@ -2,7 +2,7 @@ import React from "react"
 import LazyImage from "./../../lib/lazy-images"
 
 const FlipCard = ({ card }) => {
-  const icon = LazyImage(card.icons.data.attributes, "icon", "lazy", undefined)
+  const icon = LazyImage(card.icons.data.attributes, "lazy", undefined)
 
   return (
     <div className="flip-card-outer mx-6">

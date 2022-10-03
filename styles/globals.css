@@ -11,6 +11,7 @@
 @import "./pages/contact.css";
 @import "./pages/devis.css";
 @import "./animations/progress-bar.css";
+@import "./pages/maintenance.css";
 /* imports Tailwind */
 @tailwind base;
 @tailwind components;
@@ -296,6 +297,13 @@
     line-height: var(--height-nav-a);
   }
 
+  #maintenance #text-maintenance a {
+    font-family: "Humanist521BT";
+    font-weight: var(--weight-h3);
+    line-height: var(--height-h3);
+    letter-spacing: var(--spacing-h3);
+  }
+
   /* MEDIA QUERIES!! */
 
   /* min 1281px == xl */
@@ -306,7 +314,8 @@
     h2 {
       font-size: var(--size-2xl-h2);
     }
-    h3 {
+    h3,
+    #maintenance #text-maintenance a {
       font-size: var(--size-2xl-h3);
     }
     h4 {
@@ -340,7 +349,8 @@
     h2 {
       font-size: var(--size-xl-h2);
     }
-    h3 {
+    h3,
+    #maintenance #text-maintenance a {
       font-size: var(--size-xl-h3);
     }
     h4 {
@@ -381,7 +391,8 @@
       line-height: var(--height-h2-phone);
       letter-spacing: var(--spacing-h2-phone);
     }
-    h3 {
+    h3,
+    #maintenance #text-maintenance a {
       font-size: var(--size-lg-h3);
       line-height: var(--height-h3-phone);
     }
@@ -431,7 +442,8 @@
       line-height: var(--height-h2-phone);
       letter-spacing: var(--spacing-h2-phone);
     }
-    h3 {
+    h3,
+    #maintenance #text-maintenance a {
       font-size: var(--size-md-h3);
       line-height: var(--height-h3-phone);
     }
@@ -481,7 +493,8 @@
       line-height: var(--height-h2-phone);
       letter-spacing: var(--spacing-h2-phone);
     }
-    h3 {
+    h3,
+    #maintenance #text-maintenance a {
       font-size: var(--size-sm-h3);
       line-height: var(--height-h3-phone);
     }

@@ -5,7 +5,6 @@ import LazyImage from "../../lib/lazy-images"
 const Mission = ({ mission }) => {
   const imageDeco = LazyImage(
     mission.images.data[0].attributes,
-    "Image de décoration mission",
     "lazy",
     undefined,
     "",

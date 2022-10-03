@@ -12,7 +12,6 @@ const Slider = ({ items, classname }) => {
   let slideInterval
   const image = LazyImage(
     items.item.data[currentIndex].attributes,
-    "any",
     "lazy",
     undefined,
     "",

@@ -3,13 +3,7 @@ import LazyImage from "../lib/lazy-images"
 import Link from "next/link"
 
 const Footer = ({ footer }) => {
-  const logo = LazyImage(
-    footer.logo.data.attributes,
-    "logo dualdclic footer",
-    "lazy",
-    undefined,
-    ""
-  )
+  const logo = LazyImage(footer.logo.data.attributes, "lazy", undefined, "")
   return (
     <div
       id="footer"
@@ -26,10 +20,10 @@ const Footer = ({ footer }) => {
             className="mx-auto"
             dangerouslySetInnerHTML={{ __html: footer.titre4 }}
           ></div>
-          <div className="mx-auto w-full">
+          <div className="md:w-2/3 w-full mx-auto">
             <Link href="/demander-un-devis">
               <a>
-                <button className="group bg-transparent border-white  hover:border-vert w-2/3 lg:w-full h-20 mx-auto block rounded-lg border-2">
+                <button className="group bg-transparent border-white  hover:border-vert w-full h-20 mx-auto block rounded-lg border-2">
                   <span
                     dangerouslySetInnerHTML={{ __html: footer.button }}
                     className=" text-white group-hover:text-vert"
@@ -75,7 +69,6 @@ const Footer = ({ footer }) => {
                 >
                   {LazyImage(
                     item.icon.data.attributes,
-                    `lien ${item.slug}`,
                     "lazy",
                     "50px",
                     undefined,
@@ -83,7 +76,6 @@ const Footer = ({ footer }) => {
                   )}
                   {LazyImage(
                     item.iconHover.data.attributes,
-                    `lien ${item.slug}`,
                     "lazy",
                     "50px",
                     undefined,

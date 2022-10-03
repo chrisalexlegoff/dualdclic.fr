@@ -3,16 +3,8 @@ import LazyImage from "./../../lib/lazy-images"
 import Link from "next/link"
 
 const Presentation = ({ presentation }) => {
-  const imgChris = LazyImage(
-    presentation.images.data[0].attributes,
-    "image christophe",
-    "lazy"
-  )
-  const imgSab = LazyImage(
-    presentation.images.data[0].attributes,
-    "image christophe",
-    "lazy"
-  )
+  const imgChris = LazyImage(presentation.images.data[0].attributes, "lazy")
+  const imgSab = LazyImage(presentation.images.data[0].attributes, "lazy")
   return (
     <div
       id="presentation"

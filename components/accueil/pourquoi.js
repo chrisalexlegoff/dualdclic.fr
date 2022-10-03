@@ -5,7 +5,6 @@ import LazyImage from "./../../lib/lazy-images"
 const Pourquoi = ({ pourquoi }) => {
   const imageDeco = LazyImage(
     pourquoi.images.data[0].attributes,
-    "Image de décoration accueil",
     "lazy",
     undefined,
     ""
@@ -14,9 +13,9 @@ const Pourquoi = ({ pourquoi }) => {
     <div id="pourquoi" className="text-center">
       <div
         style={{}}
-        className="max-w-9xl mx-auto grid grid-col-1 lg:grid-cols-2 items-center text-center lg:text-left bg-accueil-pourquoi"
+        className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-2 items-center text-center lg:text-left bg-accueil-pourquoi"
       >
-        <div className="creer flex flex-col lg:-translate-y-20 lg:min-h-[562px] lg:w-[450px] bg-rouge-orange rounded-3xl mx-auto p-12 my-10 lg:my-0 lg:mx-0 lg:ml-auto lg:mr-10">
+        <div className="col-start-1 creer flex flex-col xl:-translate-y-20 -translate-y-32 xl:min-h-[650px] max-w-[600px] bg-rouge-orange rounded-3xl mx-auto md:p-20 p-8 my-10 xl:my-0 xl:mx-0 xl:mr-10 md:w-full w-11/12">
           <div
             className="mx-auto text-center"
             dangerouslySetInnerHTML={{ __html: pourquoi.titre2 }}
@@ -38,7 +37,7 @@ const Pourquoi = ({ pourquoi }) => {
             </Link>
           </div>
         </div>
-        <div className="refondre flex flex-col lg:-translate-y-20 lg:min-h-[562px] lg:w-[450px] bg-vert-fond rounded-3xl mx-auto p-12 my-10 lg:my-0 lg:mx-0 lg:mr-auto lg:ml-10">
+        <div className="xl:col-start-2 col-start-1 refondre flex flex-col xl:-translate-y-20 -translate-y-32 max-w-[600px] xl:min-h-[650px] bg-vert-fond rounded-3xl mx-auto md:p-20 -mb-20 xl:mb-0 p-8 my-10 xl:my-0 xl:mx-0 xl:mr-auto xl:ml-10 md:w-full w-11/12">
           <div
             className="mx-auto text-center"
             dangerouslySetInnerHTML={{ __html: pourquoi.titre2bis }}
@@ -60,7 +59,7 @@ const Pourquoi = ({ pourquoi }) => {
             </Link>
           </div>
         </div>
-        <div className="hidden lg:block lg:col-span-2 mx-auto w-1/4 my-4 lg:-mb-[0.435rem]">
+        <div className="xl:col-span-2 mx-auto w-2/3 lg:w-1/4 my-4 -mb-[0.435rem]">
           {imageDeco}
         </div>
       </div>
