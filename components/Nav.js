@@ -64,7 +64,7 @@ export const Navbar = ({ logo, hamburger }) => {
   }
 
   const classNormal =
-    "lg:inline-flex lg:w-auto w-full lg:px-3 px-0 lg:py-2 lg:py-10 py-[1.8rem] lg:border-none border-b-[0.39px] border-noir-paragraphe items-center justify-center"
+    "lg:inline-flex lg:w-auto w-full lg:px-3 px-0 lg:py-2 py-[1.8rem] lg:border-none border-b-[0.39px] border-noir-paragraphe items-center justify-center"
 
   useEffect(() => {
     const scrollNav = () => {
