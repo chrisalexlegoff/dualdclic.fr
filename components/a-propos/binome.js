@@ -5,7 +5,6 @@ import LazyImage from "./../../lib/lazy-images"
 const Binome = ({ binome }) => {
   const imageCarre = LazyImage(
     binome.images.data[1].attributes,
-    "Image carre section binome",
     "lazy",
     undefined,
     "",
@@ -13,7 +12,6 @@ const Binome = ({ binome }) => {
   )
   const imageFleche = LazyImage(
     binome.images.data[0].attributes,
-    "Image fleche section binome",
     "lazy",
     undefined,
     "",

@@ -24,12 +24,7 @@ const Mission = ({ mission }) => {
                 key={miss.id}
                 className="w-3/4 lg:w-[400px] min-h-[470px] flex flex-col justify-center items-center rounded-xl bg-fond-gris pt-16 m-4"
               >
-                {LazyImage(
-                  miss.icons.data.attributes,
-                  `"icon-${index}`,
-                  "lazy",
-                  "80px"
-                )}
+                {LazyImage(miss.icons.data.attributes, "lazy", "80px")}
                 <div
                   className="m-6 min-h-[40px] w-3/5"
                   dangerouslySetInnerHTML={{ __html: miss.legend }}

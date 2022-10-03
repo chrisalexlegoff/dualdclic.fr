@@ -12,26 +12,26 @@ const SuccessForm = ({ successForm }) => {
         backgroundSize: "cover",
       }}
     >
-      <div className="max-w-9xl mx-auto h-screen grid gap-4 items-center text-center pt-20">
-        <div className="row-start-1">
+      <div className="max-w-9xl mx-auto h-screen grid content-evenly items-center text-center pt-20">
+        <div className="">
           <div
-            className="uppercase text-4xl w-[250px] mx-auto"
+            className="uppercase mx-auto"
             dangerouslySetInnerHTML={{ __html: successForm.titre }}
           ></div>
           <div className="h-[2px] bg-[#41EAD4] mx-auto mt-6 w-2/12"></div>
         </div>
-        <div className="row-start-3">
+        <div className="">
           <div
-            className=""
+            className="w-3/4 md:w-full mx-auto"
             dangerouslySetInnerHTML={{
               __html: successForm.paragraphe,
             }}
           ></div>
         </div>
-        <div className="row-start-4">
+        <div className="md:w-1/4 w-3/4 mx-auto">
           <Link href="/">
             <a>
-              <button className="group bg-transparent hover:bg-[#41EAD4] lg:w-1/4 w-3/4 h-20 mx-auto block rounded-lg border-2 border-[#41EAD4]">
+              <button className="group bg-transparent hover:bg-[#41EAD4] h-20 mx-auto w-full block rounded-lg border-2 border-[#41EAD4]">
                 <span
                   dangerouslySetInnerHTML={{
                     __html: successForm.button,

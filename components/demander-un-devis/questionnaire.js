@@ -16,25 +16,21 @@ const Questionnaire = ({ devis }) => {
   const router = useRouter()
   const uncheckedIcon = LazyImage(
     devis.besoinUn.icon.data[1].attributes,
-    "icon unchecked",
     "lazy",
     "30px"
   )
   const checkedIcon = LazyImage(
     devis.besoinUn.icon.data[0].attributes,
-    "icon checked",
     "lazy",
     "30px"
   )
   const checkedIconCircle = LazyImage(
     devis.personneEntreprise.icon.data[1].attributes,
-    "icon checked cercle",
     "lazy",
     "30px"
   )
   const uncheckedIconCircle = LazyImage(
     devis.personneEntreprise.icon.data[0].attributes,
-    "icon unchecked cercle",
     "lazy",
     "30px"
   )

@@ -5,7 +5,6 @@ import LazyImage from "../../lib/lazy-images"
 const Nous = ({ nous }) => {
   const imageFleche = LazyImage(
     nous.images.data[0].attributes,
-    "Image fleche mission",
     "lazy",
     undefined,
     "",

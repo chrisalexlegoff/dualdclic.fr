@@ -40,12 +40,7 @@ const Services = ({ services }) => {
               key={service.id}
               className="m-6 rounded-xl bg-blanc w-[250px] h-[250px] flex flex-col justify-evenly items-center"
             >
-              {LazyImage(
-                service.icons.data.attributes,
-                `"icon-${index}`,
-                "lazy",
-                "100px"
-              )}
+              {LazyImage(service.icons.data.attributes, "lazy", "100px")}
               <div
                 className="uppercase min-h-[40px] mx-10"
                 dangerouslySetInnerHTML={{ __html: service.legend }}

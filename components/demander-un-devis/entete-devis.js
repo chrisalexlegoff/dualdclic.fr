@@ -6,7 +6,6 @@ import LazyImage from "./../../lib/lazy-images"
 const EnteteDevis = ({ header }) => {
   const imageDeco = LazyImage(
     header.imageDeco.data.attributes,
-    "Image de décoration entête devis",
     "lazy",
     undefined,
     ""

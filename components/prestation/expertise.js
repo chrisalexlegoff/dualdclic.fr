@@ -6,7 +6,6 @@ const Expertise = ({ expertise }) => {
   const [boardState, setBoardState] = useState(null)
   const imageDeco = LazyImage(
     expertise.images.data[0].attributes,
-    "Image de décoration expertise prestation",
     "lazy",
     "300px",
     ""
@@ -51,7 +50,6 @@ const Expertise = ({ expertise }) => {
                       <div className="" onClick={() => setBoardState(null)}>
                         {LazyImage(
                           item.icons.data[0].attributes,
-                          `"icon-${index}`,
                           "lazy",
                           "30px",
                           undefined,
@@ -73,7 +71,6 @@ const Expertise = ({ expertise }) => {
                     <div className="" onClick={() => setBoardState(index)}>
                       {LazyImage(
                         item.icons.data[1].attributes,
-                        `"icon-${index}`,
                         "lazy",
                         "30px",
                         undefined,

@@ -3,9 +3,9 @@ import Link from "next/link"
 import LazyImage from "./../../lib/lazy-images"
 
 const Methodologie = ({ methodologie, mission }) => {
+  console.log(methodologie)
   const imageDeco = LazyImage(
     methodologie.images.data[1].attributes,
-    "Image de décoration mission prestation",
     "lazy",
     "",
     "",
@@ -70,7 +70,6 @@ const Methodologie = ({ methodologie, mission }) => {
               <div className="flex items-center col-start-2">
                 {LazyImage(
                   item.icons.data[0].attributes,
-                  `"icon-${index}`,
                   "lazy",
                   "40px",
                   undefined,
@@ -114,7 +113,6 @@ const Methodologie = ({ methodologie, mission }) => {
                 ></div>
                 {LazyImage(
                   item.icons.data[0].attributes,
-                  `"icon-${index}`,
                   "lazy",
                   "42px",
                   undefined,
@@ -155,7 +153,6 @@ const Methodologie = ({ methodologie, mission }) => {
               <div className="w-max">
                 {LazyImage(
                   item.icons.data[0].attributes,
-                  `"icon-${index}`,
                   "lazy",
                   "30px",
                   undefined,

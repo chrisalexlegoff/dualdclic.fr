@@ -5,7 +5,6 @@ import LazyImage from "../../lib/lazy-images"
 const Mission = ({ mission }) => {
   const imageDeco = LazyImage(
     mission.images.data[0].attributes,
-    "Image de décoration mission",
     "lazy",
     undefined,
     "",
@@ -35,12 +34,7 @@ const Mission = ({ mission }) => {
               key={miss.id}
               className="services w-auto md:w-[360px] flex flex-col justify-center items-center rounded-xl bg-fond-gris pt-16 m-4"
             >
-              {LazyImage(
-                miss.icons.data.attributes,
-                `"icon-${index}`,
-                "lazy",
-                "100px"
-              )}
+              {LazyImage(miss.icons.data.attributes, "lazy", "100px")}
               <div
                 className="m-6 min-h-[40px] w-3/5 "
                 dangerouslySetInnerHTML={{ __html: miss.legend }}

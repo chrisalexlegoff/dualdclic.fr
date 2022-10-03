@@ -15,25 +15,21 @@ export const FileTroisUpload = ({
 }) => {
   const iconError = LazyImage(
     uploadFilesEntreprise.iconError.data.attributes,
-    "icon erreur chargement fichier",
     "lazy",
     "20px"
   )
   const iconNuage = LazyImage(
     uploadFilesEntreprise.iconNuage.data.attributes,
-    "icon nuage chargement fichier",
     "lazy",
     "50px"
   )
   const iconFichier = LazyImage(
     uploadFilesEntreprise.iconFichier.data.attributes,
-    "icon Fichier chargement fichier",
     "lazy",
     "50px"
   )
   const iconTrash = LazyImage(
     uploadFilesEntreprise.iconTrash.data.attributes,
-    "icon poubelle chargement fichier",
     "lazy",
     "30px"
   )

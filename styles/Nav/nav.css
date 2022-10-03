@@ -1,11 +1,15 @@
 /* Style Nav */
-#nav .li a {
+#nav .li a,
+#navMobile .li a {
   color: var(--noir-style);
 }
-#nav .li a:last-child {
+#nav .li a:last-child,
+#navMobile .li a:first-child {
   color: var(--rouge-orange);
 }
 #nav .li a:hover,
-#nav .li .active {
+#nav .li .active,
+#navMobile .li a:hover,
+#navMobile .li .active {
   color: var(--bleu-clair);
 }

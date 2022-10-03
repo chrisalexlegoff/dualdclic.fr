@@ -9,19 +9,16 @@ const ContactForm = ({ contact }) => {
   const router = useRouter()
   const uncheckedIcon = LazyImage(
     contact.checkTerms.icons.data[1].attributes,
-    "icon unchecked",
     "lazy",
     "30px"
   )
   const checkedIcon = LazyImage(
     contact.checkTerms.icons.data[0].attributes,
-    "icon checked",
     "lazy",
     "30px"
   )
   const imageDeco = LazyImage(
     contact.imageDeco.data.attributes,
-    "icon checked",
     "lazy",
     "80px",
     "",
