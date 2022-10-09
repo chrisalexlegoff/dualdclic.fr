@@ -2,7 +2,7 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-const toggleMaintenance = true
+const toggleMaintenance = false
 
 module.exports = {
   async redirects() {

@@ -19,11 +19,11 @@ const MaintenancePage = ({ maintenance }) => {
         backgroundSize: "cover",
       }}
     >
-      <div className="max-w-9xl grid content-evenly mx-auto h-screen items-center text-center">
+      <div className="max-w-9xl flex flex-col mx-auto h-screen justify-center items-center text-center">
         <div className="mx-auto">
           <div className="lg:w-full w-3/4 mx-auto">{logo}</div>
         </div>
-        <div className="lg:w-1/2 w-3/4 mx-auto">
+        <div className="lg:w-1/2 w-3/4 mx-auto my-10">
           <div
             className="uppercase"
             dangerouslySetInnerHTML={{

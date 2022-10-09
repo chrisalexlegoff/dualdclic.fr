@@ -12,6 +12,7 @@
 @import "./pages/devis.css";
 @import "./animations/progress-bar.css";
 @import "./pages/maintenance.css";
+@import "./pages/mentions-legales.css";
 /* imports Tailwind */
 @tailwind base;
 @tailwind components;
@@ -299,9 +300,9 @@
 
   #maintenance #text-maintenance a {
     font-family: "Humanist521BT";
-    font-weight: var(--weight-h3);
-    line-height: var(--height-h3);
-    letter-spacing: var(--spacing-h3);
+    font-weight: var(--weight-p);
+    line-height: var(--height-p);
+    letter-spacing: var(--spacing-p);
   }
 
   /* MEDIA QUERIES!! */
@@ -314,8 +315,7 @@
     h2 {
       font-size: var(--size-2xl-h2);
     }
-    h3,
-    #maintenance #text-maintenance a {
+    h3 {
       font-size: var(--size-2xl-h3);
     }
     h4 {
@@ -330,7 +330,8 @@
     p,
     a,
     ::placeholder,
-    .error-msg {
+    .error-msg,
+    #maintenance #text-maintenance a {
       font-size: var(--size-2xl-p);
     }
     button > span {
@@ -349,8 +350,7 @@
     h2 {
       font-size: var(--size-xl-h2);
     }
-    h3,
-    #maintenance #text-maintenance a {
+    h3 {
       font-size: var(--size-xl-h3);
     }
     h4 {
@@ -365,7 +365,8 @@
     p,
     a,
     ::placeholder,
-    .error-msg {
+    .error-msg,
+    #maintenance #text-maintenance a {
       font-size: var(--size-xl-p);
     }
     button > span {
@@ -391,8 +392,7 @@
       line-height: var(--height-h2-phone);
       letter-spacing: var(--spacing-h2-phone);
     }
-    h3,
-    #maintenance #text-maintenance a {
+    h3 {
       font-size: var(--size-lg-h3);
       line-height: var(--height-h3-phone);
     }
@@ -413,7 +413,8 @@
     p,
     a,
     ::placeholder,
-    .error-msg {
+    .error-msg,
+    #maintenance #text-maintenance a {
       font-size: var(--size-lg-p);
       line-height: var(--height-p-phone);
       letter-spacing: var(--spacing-p-phone);
@@ -442,8 +443,7 @@
       line-height: var(--height-h2-phone);
       letter-spacing: var(--spacing-h2-phone);
     }
-    h3,
-    #maintenance #text-maintenance a {
+    h3 {
       font-size: var(--size-md-h3);
       line-height: var(--height-h3-phone);
     }
@@ -464,7 +464,8 @@
     p,
     a,
     ::placeholder,
-    .error-msg {
+    .error-msg,
+    #maintenance #text-maintenance a {
       font-size: var(--size-md-p);
       line-height: var(--height-p-phone);
       letter-spacing: var(--spacing-p-phone);
@@ -493,8 +494,7 @@
       line-height: var(--height-h2-phone);
       letter-spacing: var(--spacing-h2-phone);
     }
-    h3,
-    #maintenance #text-maintenance a {
+    h3 {
       font-size: var(--size-sm-h3);
       line-height: var(--height-h3-phone);
     }
@@ -515,7 +515,8 @@
     p,
     a,
     ::placeholder,
-    .error-msg {
+    .error-msg,
+    #maintenance #text-maintenance a {
       font-size: var(--size-sm-p);
       line-height: var(--height-p-phone);
       letter-spacing: var(--spacing-p-phone);
