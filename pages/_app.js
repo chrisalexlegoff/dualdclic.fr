@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import "../styles/globals.css"
 import Router from "next/router"
 import NProgress from "nprogress" //nprogress module
-import * as ga from "../lib/ga"
+import Script from "next/script"
 
 NProgress.configure({ showSpinner: false })
 // NProgress.configure({ minimum: 0.5 })
@@ -34,21 +34,25 @@ function MyApp({ Component, pageProps }) {
     }
   }, [])
 
-  useEffect(() => {
-    const handleRouteChange = (url) => {
-      ga.pageview(url)
-    }
-    //When the component is mounted, subscribe to router changes
-    //and log those page views
-    Router.events.on("routeChangeComplete", handleRouteChange)
-
-    // If the component is unmounted, unsubscribe
-    // from the event with the `off` method
-    return () => {
-      Router.events.off("routeChangeComplete", handleRouteChange)
-    }
-  }, [])
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Script
+        id="gtag"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                      })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER}');`,
+        }}
+      />
+      <Component {...pageProps} />
+    </>
+  )
 }
 
 export default MyApp
