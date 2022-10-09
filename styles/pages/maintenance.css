@@ -1,4 +1,14 @@
 /* MAINTENANCE */
+
+/* External link */
+#mentions-legales a[target="_blank"]:after {
+  content: url(../public/bleu-clair-external-link.svg);
+}
+#mentions-legales a:hover[target="_blank"]:after {
+  content: url(../public/rouge-orange-external-link.svg);
+}
+
+/* color */
 #maintenance h3,
 #maintenance #text-maintenance p {
   color: var(--noir-style);

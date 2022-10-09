@@ -1,0 +1,12 @@
+/* MENTIONS-LEGALES */
+#mentions-legales h1,
+#mentions-legales p {
+  color: var(--noir-style);
+}
+#mentions-legales h2,
+#mentions-legales a:hover {
+  color: var(--rouge-orange);
+}
+#mentions-legales a {
+  color: var(--bleu-clair);
+}

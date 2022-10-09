@@ -74,16 +74,16 @@ const Binome = ({ binome }) => {
         </div>
       </div>
       <div className="block lg:hidden my-12">{imageCarre}</div>
-      <div className="flex flex-wrap items-center lg:w-full w-3/4 mx-auto mt-20">
+      <div className="flex flex-wrap items-center lg:w-full w-10/12 mx-auto mt-20">
         <div
           className="text-center mx-auto lg:mr-6 lg:w-1/3 lg:mb-0 mb-10"
           dangerouslySetInnerHTML={{ __html: binome.paragrapheBis }}
         ></div>
         {imageFleche}
-        <div className="mx-auto lg:w-1/4 md:w-1/3 w-full mt-6 md:mt-0 px-4">
+        <div className="mx-auto lg:w-1/4 md:w-1/3 w-full mt-6 md:mt-0">
           <Link href="/demander-un-devis">
             <a>
-              <button className="group bg-transparent hover:bg-rouge-orange w-full h-20 mx-auto lg:m-0 block rounded-lg border-2 border-rouge-orange">
+              <button className="group bg-transparent hover:bg-rouge-orange w-full h-20 mx-auto lg:m-0 block rounded-lg border-2 border-rouge-orange px-4">
                 <span
                   dangerouslySetInnerHTML={{ __html: binome.button }}
                   className="text-rouge-orange group-hover:text-blanc"

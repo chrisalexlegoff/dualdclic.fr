@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import LazyImage from "../../lib/lazy-images"
 
 const ScrollButton = ({ scrollTop }) => {
   const [visible, setVisible] = useState(false)
@@ -27,21 +28,34 @@ const ScrollButton = ({ scrollTop }) => {
     }
   }, [])
 
+  const scrollImgMobile = LazyImage(
+    scrollTop.bg.data.attributes,
+    "lazy",
+    "40px"
+  )
+  const scrollImg = LazyImage(scrollTop.bg.data.attributes, "lazy", "70px")
+
   return (
-    <button className="fixed w-10 right-10 bottom-10 h-10 z-10 cursor-pointer">
-      <div
-        className="w-full h-full"
-        onClick={scrollToTop}
-        style={{
-          display: visible ? "block" : "none",
-          backgroundImage: `url(${
-            process.env.NEXT_PUBLIC_URL + scrollTop.bg.data.attributes.url
-          })`,
-          backgroundPosition: "center",
-          backgroundSize: "cover ",
-        }}
-      ></div>
-    </button>
+    <>
+      <button
+        className={`${
+          visible ? "md:block" : "hidden"
+        } hidden fixed right-8 bottom-8 z-10 cursor-pointer`}
+      >
+        <div className="" onClick={scrollToTop}>
+          {scrollImg}
+        </div>
+      </button>
+      <button
+        className={`${
+          visible ? "block" : "hidden"
+        } md:hidden fixed right-4 bottom-4 z-10 cursor-pointer`}
+      >
+        <div className="" onClick={scrollToTop}>
+          {scrollImgMobile}
+        </div>
+      </button>
+    </>
   )
 }
 

@@ -23,16 +23,16 @@ const AccueilAbout = ({ header }) => {
       }}
     >
       <div className="lg:bg-entete-a-propos bg-entete-a-propos-mobile">
-        <div className="max-w-9xl mx-auto h-screen grid grid-col-1 lg:grid-cols-2 gap-4 items-center lg:justify-start text-center lg:text-left ">
-          <div className="flex flex-col lg:flex-row lg:row-start-1 mx-auto w-3/4 mt-32 justify-between items-center">
+        <div className="max-w-9xl mx-auto h-screen grid grid-col-1 lg:grid-cols-2 gap-4 items-center lg:justify-start text-center lg:text-left pt-16 md:pt-0">
+          <div className="flex flex-col lg:flex-row lg:row-start-1 mx-auto w-3/4 mt-0 md:mt-32 justify-between items-center">
             <div
               className="uppercase"
               dangerouslySetInnerHTML={{ __html: header.titrePage }}
             ></div>
-            <div className="my-12 lg:my-0">{imageDeco}</div>
+            <div className="mt-12 md:my-12 lg:my-0">{imageDeco}</div>
           </div>
           <div
-            className="h5 lg:row-start-2 mx-auto w-3/4 lg:mb-0 mb-32"
+            className="h5 lg:row-start-2 mx-auto w-3/4 lg:mb-0 mb-0 md:mb-32"
             dangerouslySetInnerHTML={{ __html: header.titre }}
           ></div>
           <div className="row-start-3 lg:col-span-2 animate-pulse">

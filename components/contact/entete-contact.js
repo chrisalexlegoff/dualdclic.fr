@@ -22,18 +22,25 @@ const EnteteContact = ({ header }) => {
       }}
     >
       <div className="lg:bg-entete-contact bg-entete-contact-mobile">
-        <div className="max-w-9xl mx-auto h-screen grid grid-col-1 lg:grid-cols-2 gap-4 items-center lg:justify-start text-center lg:text-left pt-10">
+        <div className="max-w-9xl mx-auto h-screen grid grid-col-1 lg:grid-cols-2 gap-0 md:gap-4 items-center lg:justify-start text-center lg:text-left pt-20 md:pt-10">
           <div className="flex flex-col lg:flex-row lg:row-start-1 mx-auto w-3/4 justify-between">
             <div
               className="uppercase lg:w-2/3"
               dangerouslySetInnerHTML={{ __html: header.titrePage }}
             ></div>
-            <div className="my-12 lg:my-0">{imageDeco}</div>
+            <div className="mt-4 md:my-12 lg:my-0">{imageDeco}</div>
           </div>
-          <div
-            className="h5 lg:row-start-2 mx-auto w-3/4"
-            dangerouslySetInnerHTML={{ __html: header.paragraphe }}
-          ></div>
+          <div className="lg:row-start-2 ">
+            <div
+              className="h5 mx-auto w-3/4"
+              dangerouslySetInnerHTML={{ __html: header.titre }}
+            ></div>
+            <div
+              className="hidden md:block h5 lg:row-start-2 mx-auto w-3/4"
+              dangerouslySetInnerHTML={{ __html: header.paragraphe }}
+            ></div>
+          </div>
+
           <div className="lg:row-start-3 mx-auto w-3/4 ">
             <Link href="/demander-un-devis">
               <a>

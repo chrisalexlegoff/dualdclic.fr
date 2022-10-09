@@ -1,10 +1,15 @@
 /* Style Footer */
 #footer,
-#footer nav > .li a {
+#footer-mobile,
+#footer nav > .li a,
+#footer-mobile nav > .li a {
   color: var(--blanc);
 }
 #footer .mail:hover,
 #footer .contact:hover,
-#footer .nav > .li a:hover {
+#footer .nav > .li a:hover,
+#footer-mobile .mail:hover,
+#footer-mobile .contact:hover,
+#footer-mobile .nav > .li a:hover {
   color: var(--vert);
 }

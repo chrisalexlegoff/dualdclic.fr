@@ -4,10 +4,16 @@ import Link from "next/link"
 
 const Expertise = ({ expertise }) => {
   const [boardState, setBoardState] = useState(null)
-  const imageDeco = LazyImage(
+  const imageCible = LazyImage(
     expertise.images.data[0].attributes,
     "lazy",
     "300px",
+    ""
+  )
+  const imageCibleMobile = LazyImage(
+    expertise.images.data[1].attributes,
+    "lazy",
+    "200px",
     ""
   )
   return (
@@ -83,7 +89,10 @@ const Expertise = ({ expertise }) => {
             ))}
           </div>
           <div className="objectif mx-auto row-start-4 flex flex-col lg:flex-row w-3/4 lg:mt-10 justify-center">
-            <div className="my-6 lg:mb-0">{imageDeco}</div>
+            <div className="hidden md:block my-6 lg:mb-0">{imageCible}</div>
+            <div className="block md:hidden my-6 lg:mb-0">
+              {imageCibleMobile}
+            </div>
             <div className="flex flex-col justify-center lg:pl-10">
               <div
                 className="lg:text-left mb-10 uppercase"
