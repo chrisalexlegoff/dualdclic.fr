@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import "../styles/globals.css"
 import Router from "next/router"
 import NProgress from "nprogress" //nprogress module
+import * as ga from "../lib/ga"
 
 NProgress.configure({ showSpinner: false })
 // NProgress.configure({ minimum: 0.5 })
@@ -30,6 +31,21 @@ function MyApp({ Component, pageProps }) {
 
       // Remove event listener on cleanup
       return () => window.removeEventListener("resize", handleResize)
+    }
+  }, [])
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      ga.pageview(url)
+    }
+    //When the component is mounted, subscribe to router changes
+    //and log those page views
+    Router.events.on("routeChangeComplete", handleRouteChange)
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method
+    return () => {
+      Router.events.off("routeChangeComplete", handleRouteChange)
     }
   }, [])
   return <Component {...pageProps} />
