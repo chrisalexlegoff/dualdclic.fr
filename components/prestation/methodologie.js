@@ -3,7 +3,6 @@ import Link from "next/link"
 import LazyImage from "./../../lib/lazy-images"
 
 const Methodologie = ({ methodologie, mission }) => {
-  console.log(methodologie)
   const imageDeco = LazyImage(
     methodologie.images.data[1].attributes,
     "lazy",

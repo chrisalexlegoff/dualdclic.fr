@@ -28,7 +28,7 @@ export const uploadFile = async (file) => {
     method: "post",
     url: process.env.NEXT_PUBLIC_API_UPLOAD_URL,
     data: formData,
-  }).then(({ data }) => {
-    console.log("Succesfully uploaded: ", JSON.stringify(data))
+  }).catch((error) => {
+    console.error("There was an error!", error)
   })
 }

@@ -3,8 +3,9 @@ import React from "react"
 import { useState, useEffect } from "react"
 import LazyImage from "./../lib/lazy-images"
 import { useRouter } from "next/router"
+import { ReadingProgress } from "./progress-bar/progress-bar"
 
-export const Navbar = ({ logo, hamburger }) => {
+export const Navbar = ({ logo, hamburger, target }) => {
   const [active, setActive] = useState(false)
   const [open, setOpen] = useState(false)
   const [scroll, setScroll] = useState(0)
@@ -89,9 +90,9 @@ export const Navbar = ({ logo, hamburger }) => {
       {/* Nav Desktop */}
       <nav
         id="nav"
-        className="hidden lg:block opacity-0 shadow-[0px_2px_20px_rgba(0,0,0,0.14)] transition-opacity bg-nav p-3 fixed w-full z-10"
+        className="hidden lg:block opacity-0 shadow-[0px_2px_20px_rgba(0,0,0,0.14)] transition-opacity bg-nav fixed w-full z-10"
       >
-        <div className="max-w-9xl mx-16 flex items-center flex-wrap">
+        <div className="max-w-9xl mx-16 my-2 flex items-center flex-wrap">
           <Link href="/" className="">
             <a className="p-2 mr-4 w-[200px]">{newLogoDesktop}</a>
           </Link>
@@ -162,6 +163,7 @@ export const Navbar = ({ logo, hamburger }) => {
             </Link>
           </div>
         </div>
+        <ReadingProgress target={target} />
       </nav>
       {/* Nav mobile */}
       <nav
@@ -182,6 +184,7 @@ export const Navbar = ({ logo, hamburger }) => {
           </button>
           {/*Note that in this div we will use a ternary operator to decide whether or not to display the content of the div  */}
           <div className={`${active ? "" : "hidden"} w-full h-full`}>
+            <ReadingProgress target={target} />
             <div className="px-3 pt-[2.2rem] li w-full items-start  flex flex-col">
               <Link href="/demander-un-devis">
                 <a

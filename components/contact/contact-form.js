@@ -26,8 +26,6 @@ const ContactForm = ({ contact }) => {
   )
   const [errorSubmit, setErrorSubmit] = useState(false)
   const [testEnvoi, setTestEnvoi] = useState(false)
-  console.log(errorSubmit)
-
   const [errorContactFormInputNom, setErrorContactFormInputNom] =
     useState(false)
   const [errorContactFormInputMessage, setErrorContactFormInputMessage] =
@@ -114,7 +112,6 @@ const ContactForm = ({ contact }) => {
     if (!errorSubmit) {
       setTestEnvoi(true)
       const uuidEnCours = uuid()
-      console.log(contactEnCours)
       const data = {
         identifiant: uuidEnCours,
         contact: {

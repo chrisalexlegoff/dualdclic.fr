@@ -24,7 +24,6 @@ const demanderUnDevis = ({
   mission,
   scrollTop,
 }) => {
-  console.log(devis)
   return (
     <Layout
       scrollTop={scrollTop}
