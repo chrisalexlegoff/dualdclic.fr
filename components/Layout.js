@@ -1,5 +1,6 @@
 import Head from "next/head"
 import React from "react"
+import Consent from "../lib/consent"
 import Footer from "./Footer"
 import Nav from "./Nav"
 import ScrollButton from "./ScrollTop/scrollButton"
@@ -18,9 +19,9 @@ const Layout = ({
       <Head>
         <title>{titrePageEncours}</title>
       </Head>
-
       <Nav logo={logo} hamburger={hamburger} />
       <ScrollButton scrollTop={scrollTop} />
+      <Consent />
       <main className="select-none">{children}</main>
       <Footer footer={footer} />
     </>

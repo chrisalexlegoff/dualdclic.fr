@@ -229,6 +229,19 @@
     scroll-behavior: smooth;
   }
 
+  #consent {
+    z-index: 20;
+  }
+
+  #button-close-consent {
+    position: fixed;
+    right: 0;
+    margin-right: 0.4rem;
+    transform: translateY(-40%);
+    height: 20px;
+    width: 20px;
+  }
+
   body {
     @apply no-scrollbar;
   }

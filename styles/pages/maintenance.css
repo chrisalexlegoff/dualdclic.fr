@@ -7,6 +7,9 @@
 #mentions-legales a:hover[target="_blank"]:after {
   content: url(../public/rouge-orange-external-link.svg);
 }
+/* #consent #button-close-consent > span:after {
+  content: url(../public/close-button.svg);
+} */
 
 /* color */
 #maintenance h3,
