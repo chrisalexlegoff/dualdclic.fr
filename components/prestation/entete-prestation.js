@@ -4,7 +4,6 @@ import Link from "next/link"
 import LazyImage from "../../lib/lazy-images"
 
 const EntetePrestations = ({ header }) => {
-  console.log(header)
   const imageDeco = LazyImage(
     header.imageDeco.data.attributes,
     "lazy",

@@ -230,14 +230,16 @@
   }
 
   #consent {
-    z-index: 20;
+    z-index: 40;
+    bottom: 0px;
+  }
+
+  #consent a:hover {
+    color: var(--rouge-orange) !important;
   }
 
   #button-close-consent {
-    position: fixed;
-    right: 0;
-    margin-right: 0.4rem;
-    transform: translateY(-40%);
+    margin-left: 2.5rem;
     height: 20px;
     width: 20px;
   }

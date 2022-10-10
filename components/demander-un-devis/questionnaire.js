@@ -12,7 +12,6 @@ import { poster } from "../../api/backend"
 import { uploadFile } from "./../../api/backend"
 
 const Questionnaire = ({ devis }) => {
-  console.log(devis)
   const router = useRouter()
   const uncheckedIcon = LazyImage(
     devis.besoinUn.icon.data[1].attributes,
