@@ -6,9 +6,11 @@ import LazyImage from "../../lib/lazy-images"
 const EntetePrestations = ({ header }) => {
   const imageDeco = LazyImage(
     header.imageDeco.data.attributes,
-    "lazy",
     undefined,
-    ""
+    undefined,
+    "",
+    "mt-auto",
+    true
   )
 
   return (
@@ -23,21 +25,23 @@ const EntetePrestations = ({ header }) => {
       }}
     >
       <div className="lg:bg-entete-prestation bg-entete-prestation-mobile">
-        <div className="max-w-9xl mx-auto h-screen grid grid-col-1 lg:grid-cols-2 gap-4 items-center lg:justify-start text-center lg:text-left pt-16 lg:pt-0">
-          <div className="flex flex-col lg:flex-row lg:row-start-1 mx-auto w-3/4 justify-between">
+        <div className="max-w-9xl mx-auto h-screen grid grid-col-1 lg:grid-cols-2 gap-4 items-center lg:justify-start text-center lg:text-left pt-16">
+          <div className="lg:row-start-1">
+            <div className="flex flex-col lg:flex-row mx-auto w-3/4 justify-between">
+              <div
+                className="uppercase lg:w-4/5"
+                dangerouslySetInnerHTML={{ __html: header.titrePage }}
+              ></div>
+              <div className="mt-12 md:my-12 lg:my-0">{imageDeco}</div>
+            </div>
             <div
-              className="uppercase lg:w-2/3"
-              dangerouslySetInnerHTML={{ __html: header.titrePage }}
+              className="sous-titre mt-16 lg:row-start-2 mx-auto w-3/4 lg:pr-32 lg:mb-0 mb-0 md:mb-32"
+              dangerouslySetInnerHTML={{ __html: header.paragraphe }}
             ></div>
-            <div className="mt-12 md:my-12 lg:my-0">{imageDeco}</div>
           </div>
-          <div
-            className="h5 lg:row-start-2 mx-auto w-3/4 lg:mb-0 mb-0 md:mb-32"
-            dangerouslySetInnerHTML={{ __html: header.paragraphe }}
-          ></div>
-          <div className="row-start-3 lg:col-span-2 animate-pulse">
-            <Link href="/nos-prestations/#expertise">
-              <a className="flex flex-col items-center">
+          <div className="row-start-2 lg:col-span-2 animate-pulse h-full">
+            <Link href="/prestation-web-print/#expertise">
+              <a className="flex flex-col items-center h-full justify-end pb-6">
                 <span className="mb-2">{/* {header.enSavoirPlus.text} */}</span>
                 <Image
                   src={

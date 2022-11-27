@@ -15,7 +15,7 @@ export default function mentionsLegales({
   hamburger,
   footer,
   scrollTop,
-  titrePage,
+  seo,
   mentionsLegales,
 }) {
   return (
@@ -24,7 +24,7 @@ export default function mentionsLegales({
       logo={logo}
       hamburger={hamburger}
       footer={footer}
-      titrePage={titrePage}
+      seo={seo}
     >
       <div id="mentions-legales">
         <MentionsLegales mentionsLegales={mentionsLegales} />
@@ -42,7 +42,7 @@ export async function getStaticProps() {
   return {
     props: {
       mentionsLegales: mentionsLegales.data.attributes,
-      titrePage: mentionsLegales.data.attributes.titrePage,
+      seo: mentionsLegales.data.attributes.seo,
       logo: logos.data.attributes.logo,
       hamburger: hamburger.data.attributes.hamburger,
       footer: footer.data.attributes,

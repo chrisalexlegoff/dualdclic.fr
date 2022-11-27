@@ -13,6 +13,8 @@
 @import "./animations/progress-bar.css";
 @import "./pages/maintenance.css";
 @import "./pages/mentions-legales.css";
+@import "./carousel/carousel.css";
+@import "./pages/404.css";
 /* imports Tailwind */
 @tailwind base;
 @tailwind components;
@@ -43,6 +45,7 @@
   --fond-orange: #fff5f5;
   --noir-style: #3f3f3f;
   --vert-fond: #ebfffc;
+  --vert-fond-2: rgba(235, 255, 252, 0.8);
   --fond-gris: rgba(250, 250, 251, 0.95);
   --blanc-transparent: rgba(255, 255, 255, 0.65);
   --blanc-transparent-2: rgba(255, 255, 255, 0.9);
@@ -52,32 +55,39 @@
 
   /* Font-size */
   /* h1 */
-  --size-2xl-h1: 2.375rem;
-  --size-xl-h1: 2.125rem;
+  --size-2xl-h1: 2rem;
+  --size-xl-h1: 1.8rem;
   --size-lg-h1: 1.5rem;
-  --size-md-h1: 1.375rem;
-  --size-sm-h1: 1.25rem;
+  --size-md-h1: 1.5rem;
+  --size-sm-h1: 1.2rem;
 
   /* h2 */
-  --size-2xl-h2: 2.125rem;
-  --size-xl-h2: 1.875rem;
-  --size-lg-h2: 1.5rem;
-  --size-md-h2: 1.375rem;
-  --size-sm-h2: 1.25rem;
+  --size-2xl-h2: 1.5rem;
+  --size-xl-h2: 1.3rem;
+  --size-lg-h2: 1.15rem;
+  --size-md-h2: 1.1rem;
+  --size-sm-h2: 1.1rem;
 
   /* h3 */
-  --size-2xl-h3: 2.125rem;
-  --size-xl-h3: 1.875rem;
-  --size-lg-h3: 1.375rem;
-  --size-md-h3: 1.25rem;
-  --size-sm-h3: 1.125rem;
+  --size-2xl-h3: 1.3rem;
+  --size-xl-h3: 1.2rem;
+  --size-lg-h3: 1.1rem;
+  --size-md-h3: 1.1rem;
+  --size-sm-h3: 1rem;
 
   /* h4 */
-  --size-2xl-h4: 0.938rem;
-  --size-xl-h4: 0.813rem;
-  --size-lg-h4: 1.438rem;
-  --size-md-h4: 1.313rem;
-  --size-sm-h4: 1.188rem;
+  --size-2xl-h4: 0.9rem;
+  --size-xl-h4: 0.85rem;
+  --size-lg-h4: 0.9rem;
+  --size-md-h4: 0.9rem;
+  --size-sm-h4: 0.9rem;
+
+  /*  .h2 > h2 */
+  --size-2xl-h2-class: 1.05rem;
+  --size-xl-h2-class: 1rem;
+  --size-lg-h2-class: 0.9rem;
+  --size-md-h2-class: 1rem;
+  --size-sm-h2-class: 1rem;
 
   /*  .h5 > p */
   --size-2xl-h5: 1.6rem;
@@ -87,32 +97,60 @@
   --size-sm-h5: 1.25rem;
 
   /* p */
-  --size-2xl-p: 1.313rem;
-  --size-xl-p: 1.188rem;
-  --size-lg-p: 1.125rem;
-  --size-md-p: 1rem;
-  --size-sm-p: 0.875rem;
+  --size-2xl-p: 1.1rem;
+  --size-xl-p: 1rem;
+  --size-lg-p: 1rem;
+  --size-md-p: 1.1rem;
+  --size-sm-p: 1rem;
+
+  /* p > sous-titre */
+  --size-2xl-p-sous-titre: 1.16rem;
+  --size-xl-p-sous-titre: 1.06rem;
+  --size-lg-p-sous-titre: 1.06rem;
+  --size-md-p-sous-titre: 1.16rem;
+  --size-sm-p-sous-titre: 1.06rem;
 
   /* .competences */
   --size-2xl-competences: 1.1rem;
-  --size-xl-competences: 0.875rem;
-  --size-lg-competences: 0.75rem;
-  --size-md-competences: 0.625rem;
-  --size-sm-competences: 0.5rem;
+  --size-xl-competences: 0.95rem;
+  --size-lg-competences: 0.92rem;
+  --size-md-competences: 0.92rem;
+  --size-sm-competences: 0.92rem;
+
+  /* #footer p */
+  --size-2xl-footer-p: 1.09rem;
+  --size-xl-footer-p: 1.05rem;
+  --size-lg-footer-p: 1.02rem;
+  --size-md-footer-p: 1.2rem;
+  --size-sm-footer-p: 1rem;
 
   /* text-button */
   --size-2xl-text-button: 1.25rem;
-  --size-xl-text-button: 1.125rem;
-  --size-lg-text-button: 1.188rem;
+  --size-xl-text-button: 1.12rem;
+  --size-lg-text-button: 1.1rem;
   --size-md-text-button: 1.063rem;
-  --size-sm-text-button: 0.938rem;
+  --size-sm-text-button: 0.94rem;
+
+  /* footer > text-button */
+  --size-2xl-text-button-footer: 0.95rem;
+  --size-xl-text-button-footer: 0.95rem;
+  --size-lg-text-button-footer: 0.95rem;
+  --size-md-text-button-footer: 0.95rem;
+  --size-sm-text-button-footer: 0.95rem;
+
+  /* text-button-banner */
+  --size-2xl-text-button-banner: 1rem;
+  --size-xl-text-button-banner: 0.9rem;
+  --size-lg-text-button-banner: 0.9rem;
+  --size-md-text-button-banner: 1.05rem;
+  --size-sm-text-button-banner: 0.94rem;
 
   /* Nav > a */
-  --size-2xl-nav-a: 1.25rem;
+  --size-2xl-nav-a: 1rem;
   --size-xl-nav-a: 0.9rem;
-  --size-lg-nav-a: 0.8rem;
-  --size-md-nav-a: 1.253rem;
-  --size-sm-nav-a: 1.128rem;
+  --size-lg-nav-a: 1rem;
+  --size-md-nav-a: 1.2rem;
+  --size-sm-nav-a: 1.2rem;
 
   /* Font-weight */
   /* h1 */
@@ -121,16 +159,22 @@
   /* h2 */
   --weight-h2: 400;
   --weight-h2-phone: 300;
+  /* .h2 > h2 */
+  --weight-h2-class: 400;
   /* h3 */
   --weight-h3: 700;
   /* h4 */
-  --weight-h4: 700;
+  --weight-h4: 400;
   --weight-h4-phone: 400;
   /*  .h5 > p */
   --weight-h5: 700;
   --weight-h5-phone: 400;
   /* p */
   --weight-p: 400;
+  /* p */
+  --weight-p-sous-titre: 600;
+  /* text-button */
+  --weight-footer-p: 300;
   /* text-button */
   --weight-text-button: 700;
   /* nav > a */
@@ -138,13 +182,16 @@
 
   /* Line-height */
   /* h1 */
-  --height-h1: 2.813rem;
+  --height-h1: 2rem;
   --height-h1-phone: 1.725rem;
   /* h2 */
-  --height-h2: 2.625rem;
-  --height-h2-phone: 1.688rem;
+  --height-h2: 2rem;
+  --height-h2-phone: 1.725rem;
+  /* .h2 > h2 */
+  --height-h2-class: 1.655rem;
+  --height-h2-phone-class: 1.388rem;
   /* h3 */
-  --height-h3: 2.563rem;
+  --height-h3: 2rem;
   --height-h3-phone: 1.375rem;
   /* h4 */
   --height-h4: 1.5rem;
@@ -153,8 +200,11 @@
   --height-h5: 2.58rem;
   --height-h5-phone: 1.738rem;
   /* p */
-  --height-p: 2.05rem;
-  --height-p-phone: 1.8rem;
+  --height-p: 1.8rem;
+  --height-p-phone: 1.6rem;
+  /* #footer p */
+  --height-footer-p: 1.3rem;
+  --height-footer-p-phone: 1rem;
   /* text-button */
   --height-text-button: 1.188rem;
   /* nav > a */
@@ -168,6 +218,8 @@
   /* h2 */
   --spacing-h2: 0.06em;
   --spacing-h2-phone: 0.04em;
+  /* .h2 > h2 */
+  --spacing-h2-class: 0.045em;
   /* h3 */
   --spacing-h3: 0.04em;
   /* h4 */
@@ -186,31 +238,22 @@
 @layer base {
   @font-face {
     font-family: "Humanist521BT";
-    src: url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.eot");
-    src: url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.eot?#iefix")
+    src: url("../public/fonts/Humanist521BT/Humanist521BT.eot");
+    src: url("../public/fonts/Humanist521BT/Humanist521BT.eot?#iefix")
         format("embedded-opentype"),
-      url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.woff2")
-        format("woff2"),
-      url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.woff")
-        format("woff"),
-      url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.ttf")
-        format("truetype"),
-      url("//db.onlinewebfonts.com/t/c2a921cbcfcd6c0d04886a1adbfbfd42.svg#Humanst521 BT")
-        format("svg");
+      url("../public/fonts/Humanist521BT/Humanist521BT.woff2") format("woff2"),
+      url("../public/fonts/Humanist521BT/Humanist521BT.woff") format("woff"),
+      url("../public/fonts/Humanist521BT/Humanist521BT.ttf") format("truetype");
   }
   @font-face {
-    font-family: "Rowdies";
-    src: url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.eot");
-    src: url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.eot?#iefix")
+    font-family: "RowdiesRegular";
+    src: url("../public/fonts/RowdiesRegular/RowdiesRegular.eot");
+    src: url("../public/fonts/RowdiesRegular/RowdiesRegular.eot?#iefix")
         format("embedded-opentype"),
-      url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.woff2")
-        format("woff2"),
-      url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.woff")
-        format("woff"),
-      url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.ttf")
-        format("truetype"),
-      url("//db.onlinewebfonts.com/t/2e59f588975bbd67deea6bfb2f8e0762.svg#Rowdies")
-        format("svg");
+      url("../public/fonts/RowdiesRegular/RowdiesRegular.woff2") format("woff2"),
+      url("../public/fonts/RowdiesRegular/RowdiesRegular.woff") format("woff"),
+      url("../public/fonts/RowdiesRegular/RowdiesRegular.ttf")
+        format("truetype");
   }
 
   @layer utilities {
@@ -261,7 +304,7 @@
   }
 
   h2 {
-    font-family: "Humanist521BT";
+    font-family: "RowdiesRegular";
     font-weight: var(--weight-h2);
     line-height: var(--height-h2);
     letter-spacing: var(--spacing-h2);
@@ -275,7 +318,7 @@
   }
 
   h4 {
-    font-family: "Rowdies";
+    font-family: "RowdiesRegular";
     font-weight: var(--weight-h4);
     line-height: var(--height-h4);
     letter-spacing: var(--spacing-h4);
@@ -286,6 +329,13 @@
     font-weight: var(--weight-h5);
     line-height: var(--height-h5);
     letter-spacing: var(--spacing-h5);
+  }
+
+  .h2 > h2 {
+    font-family: "Humanist521BT";
+    font-weight: var(--weight-h2-class);
+    line-height: var(--height-h2-class);
+    letter-spacing: var(--spacing-h2-class);
   }
 
   p,
@@ -300,6 +350,29 @@
     letter-spacing: var(--spacing-p);
   }
 
+  .sous-titre > p,
+  .sous-titre p {
+    font-weight: var(--weight-p-sous-titre);
+    font-size: var(--size-2xl-p-sous-titre);
+  }
+
+  #footer p,
+  #footer .nav a {
+    font-weight: var(--weight-footer-p);
+    line-height: var(--height-footer-p);
+  }
+
+  #footer button > span,
+  #footer-mobile button > span {
+    font-size: var(--size-2xl-text-button-footer);
+  }
+
+  .checkterms > p,
+  .checkterms a {
+    font-size: var(--size-sm-p);
+    line-height: inherit;
+  }
+
   button > span {
     font-family: "Humanist521BT";
     font-weight: var(--weight-text-button);
@@ -307,8 +380,15 @@
     letter-spacing: var(--spacing-text-button);
   }
 
+  #consent button > span {
+    font-family: "Humanist521BT";
+    font-weight: var(--weight-text-button-banner);
+    line-height: var(--height-text-button-banner);
+    letter-spacing: var(--spacing-text-button-banner);
+  }
+
   nav a {
-    font-family: "Rowdies";
+    font-family: "RowdiesRegular";
     font-weight: var(--weight-nav-a);
     line-height: var(--height-nav-a);
   }
@@ -322,7 +402,7 @@
 
   /* MEDIA QUERIES!! */
 
-  /* min 1281px == xl */
+  /* min 1281px == 2xl */
   @media only screen and (min-width: 1281px) {
     h1 {
       font-size: var(--size-2xl-h1);
@@ -339,6 +419,9 @@
     .h5 > p {
       font-size: var(--size-2xl-h5);
     }
+    .h2 > h2 {
+      font-size: var(--size-2xl-h2-class);
+    }
     .competences {
       font-size: var(--size-2xl-competences);
     }
@@ -349,8 +432,22 @@
     #maintenance #text-maintenance a {
       font-size: var(--size-2xl-p);
     }
+
+    .sous-titre > p,
+    .sous-titre p {
+      font-size: var(--size-2xl-p-sous-titre);
+    }
+
+    #footer p,
+    #footer .nav a {
+      font-size: var(--size-2xl-footer-p);
+    }
+
     button > span {
       font-size: var(--size-2xl-text-button);
+    }
+    #consent button > span {
+      font-size: var(--size-2xl-text-button-banner);
     }
     nav a {
       font-size: var(--size-2xl-nav-a);
@@ -374,6 +471,9 @@
     .h5 > p {
       font-size: var(--size-xl-h5);
     }
+    .h2 > h2 {
+      font-size: var(--size-xl-h2-class);
+    }
     .competences {
       font-size: var(--size-xl-competences);
     }
@@ -384,8 +484,22 @@
     #maintenance #text-maintenance a {
       font-size: var(--size-xl-p);
     }
+
+    .sous-titre > p,
+    .sous-titre p {
+      font-size: var(--size-xl-p-sous-titre);
+    }
+
+    #footer p,
+    #footer .nav a {
+      font-size: var(--size-xl-footer-p);
+    }
+
     button > span {
       font-size: var(--size-xl-text-button);
+    }
+    #consent button > span {
+      font-size: var(--size-xl-text-button-banner);
     }
     nav a {
       font-size: var(--size-xl-nav-a);
@@ -402,7 +516,7 @@
     }
     h2 {
       font-size: var(--size-lg-h2);
-      font-family: "Rowdies";
+      font-family: "RowdiesRegular";
       font-weight: var(--weight-h2-phone);
       line-height: var(--height-h2-phone);
       letter-spacing: var(--spacing-h2-phone);
@@ -422,6 +536,11 @@
       font-weight: var(--weight-h5-phone);
       line-height: var(--height-h5-phone);
     }
+    .h2 > h2 {
+      font-size: var(--size-lg-h2-class);
+      font-weight: var(--weight-h2-class);
+      line-height: var(--height-h2-class);
+    }
     .competences {
       font-size: var(--size-lg-competences);
     }
@@ -434,8 +553,23 @@
       line-height: var(--height-p-phone);
       letter-spacing: var(--spacing-p-phone);
     }
+
+    .sous-titre > p,
+    .sous-titre p {
+      font-size: var(--size-lg-p-sous-titre);
+    }
+
+    #footer p,
+    #footer .nav a {
+      font-size: var(--size-lg-footer-p);
+      line-height: var(--height-footer-p-phone);
+    }
+
     button > span {
       font-size: var(--size-lg-text-button);
+    }
+    #consent button > span {
+      font-size: var(--size-lg-text-button-banner);
     }
     nav a {
       font-size: var(--size-lg-nav-a);
@@ -453,7 +587,7 @@
     }
     h2 {
       font-size: var(--size-md-h2);
-      font-family: "Rowdies";
+      font-family: "RowdiesRegular";
       font-weight: var(--weight-h2-phone);
       line-height: var(--height-h2-phone);
       letter-spacing: var(--spacing-h2-phone);
@@ -473,6 +607,11 @@
       font-weight: var(--weight-h5-phone);
       line-height: var(--height-h5-phone);
     }
+    .h2 > h2 {
+      font-size: var(--size-md-h2-class);
+      font-weight: var(--weight-h2-class);
+      line-height: var(--height-h2-class);
+    }
     .competences {
       font-size: var(--size-md-competences);
     }
@@ -485,8 +624,23 @@
       line-height: var(--height-p-phone);
       letter-spacing: var(--spacing-p-phone);
     }
+
+    .sous-titre > p,
+    .sous-titre p {
+      font-size: var(--size-md-p-sous-titre);
+    }
+
+    #footer p,
+    #footer .nav a {
+      font-size: var(--size-md-footer-p);
+      line-height: var(--height-footer-p-phone);
+    }
+
     button > span {
       font-size: var(--size-md-text-button);
+    }
+    #consent button > span {
+      font-size: var(--size-md-text-button-banner);
     }
     nav a {
       font-size: var(--size-md-nav-a);
@@ -504,7 +658,7 @@
     }
     h2 {
       font-size: var(--size-sm-h2);
-      font-family: "Rowdies";
+      font-family: "RowdiesRegular";
       font-weight: var(--weight-h2-phone);
       line-height: var(--height-h2-phone);
       letter-spacing: var(--spacing-h2-phone);
@@ -524,6 +678,11 @@
       font-weight: var(--weight-h5-phone);
       line-height: var(--height-h5-phone);
     }
+    .h2 > h2 {
+      font-size: var(--size-sm-h2-class);
+      font-weight: var(--weight-h2-class);
+      line-height: var(--height-h2-class);
+    }
     .competences {
       font-size: var(--size-sm-competences);
     }
@@ -538,6 +697,21 @@
     }
     button > span {
       font-size: var(--size-sm-text-button);
+    }
+
+    .sous-titre > p,
+    .sous-titre p {
+      font-size: var(--size-sm-p-sous-titre);
+    }
+
+    #footer p,
+    #footer .nav a {
+      font-size: var(--size-sm-footer-p);
+      line-height: var(--height-footer-p-phone);
+    }
+
+    #consent button > span {
+      font-size: var(--size-sm-text-button-banner);
     }
     nav a {
       font-size: var(--size-sm-nav-a);

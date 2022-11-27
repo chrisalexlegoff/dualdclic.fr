@@ -38,7 +38,7 @@ export const FileDeuxUpload = ({
     setFileEnCours(file)
   }, [file])
   return (
-    <div className="mr-12 mb-6">
+    <div className="md:mr-12 mb-6">
       {Boolean(value.length) && (
         <div>Selected files: {value.map((f) => f.name).join(", ")}</div>
       )}

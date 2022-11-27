@@ -15,10 +15,11 @@ import {
   URL_API_SCROLLTOP,
   URL_API_LOGOS,
   URL_API_FOOTER,
+  URL_API_PRESTATIONS,
 } from "../api/url"
 
 export default function Home({
-  titrePage,
+  seo,
   header,
   nous,
   projet,
@@ -27,6 +28,7 @@ export default function Home({
   realisations,
   services,
   mission,
+  expertise,
   logo,
   hamburger,
   footer,
@@ -34,11 +36,11 @@ export default function Home({
 }) {
   return (
     <Layout
+      seo={seo}
       scrollTop={scrollTop}
       logo={logo}
       hamburger={hamburger}
       footer={footer}
-      titrePage={titrePage}
     >
       <div id="accueil">
         <AccueilEntete header={header} />
@@ -47,7 +49,7 @@ export default function Home({
         <Pourquoi pourquoi={pourquoi} />
         <Valeurs valeurs={valeurs} />
         <Realisations realisations={realisations} />
-        <Services services={services} />
+        <Services services={services} expertise={expertise} />
         <Mission mission={mission} />
       </div>
     </Layout>
@@ -60,6 +62,7 @@ export async function getStaticProps() {
   const hamburger = await fetcher(URL_API_HAMBURGER)
   const footer = await fetcher(URL_API_FOOTER)
   const scrollTop = await fetcher(URL_API_SCROLLTOP)
+  const prestations = await fetcher(URL_API_PRESTATIONS)
   return {
     props: {
       header: home.data.attributes.header,
@@ -70,7 +73,8 @@ export async function getStaticProps() {
       realisations: home.data.attributes.realisations,
       services: home.data.attributes.services,
       mission: home.data.attributes.mission,
-      titrePage: home.data.attributes.titrePage,
+      expertise: prestations.data.attributes.expertise,
+      seo: home.data.attributes.seo,
       logo: logos.data.attributes.logo,
       hamburger: hamburger.data.attributes.hamburger,
       footer: footer.data.attributes,

@@ -1,26 +1,16 @@
-import Head from "next/head"
 import React from "react"
 import Consent from "../lib/consent"
+import Seo from "../lib/seo"
 import Footer from "./Footer"
 import Nav from "./Nav"
 import { ReadingProgress } from "./progress-bar/progress-bar"
 import ScrollButton from "./ScrollTop/scrollButton"
 
-const Layout = ({
-  children,
-  titrePage,
-  logo,
-  hamburger,
-  footer,
-  scrollTop,
-}) => {
-  const titrePageEncours = `DualDclic | ${titrePage}`
+const Layout = ({ children, seo, logo, hamburger, footer, scrollTop }) => {
   const target = React.createRef()
   return (
     <div ref={target}>
-      <Head>
-        <title>{titrePageEncours}</title>
-      </Head>
+      <Seo seo={seo} />
       <Nav logo={logo} hamburger={hamburger} target={target} />
       <ScrollButton scrollTop={scrollTop} />
       <ReadingProgress target={target} />

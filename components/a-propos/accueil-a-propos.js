@@ -6,9 +6,11 @@ import LazyImage from "../../lib/lazy-images"
 const AccueilAbout = ({ header }) => {
   const imageDeco = LazyImage(
     header.imageDeco.data.attributes,
-    "lazy",
     undefined,
-    ""
+    undefined,
+    "",
+    "",
+    true
   )
 
   return (
@@ -24,20 +26,23 @@ const AccueilAbout = ({ header }) => {
     >
       <div className="lg:bg-entete-a-propos bg-entete-a-propos-mobile">
         <div className="max-w-9xl mx-auto h-screen grid grid-col-1 lg:grid-cols-2 gap-4 items-center lg:justify-start text-center lg:text-left pt-16 md:pt-0">
-          <div className="flex flex-col lg:flex-row lg:row-start-1 mx-auto w-3/4 mt-0 md:mt-32 justify-between items-center">
+          <div className="lg:row-start-1">
+            <div className="flex flex-col lg:flex-row mx-auto w-3/4 mt-0 md:mt-24 justify-between items-center">
+              <div
+                className="uppercase"
+                dangerouslySetInnerHTML={{ __html: header.titrePage }}
+              ></div>
+              <div className="mt-12 md:my-12 lg:my-0">{imageDeco}</div>
+            </div>
             <div
-              className="uppercase"
-              dangerouslySetInnerHTML={{ __html: header.titrePage }}
+              className="sous-titre mt-16 lg:row-start-2 mx-auto w-3/4 lg:mb-0 mb-0 md:mb-32"
+              dangerouslySetInnerHTML={{ __html: header.titre }}
             ></div>
-            <div className="mt-12 md:my-12 lg:my-0">{imageDeco}</div>
           </div>
-          <div
-            className="h5 lg:row-start-2 mx-auto w-3/4 lg:mb-0 mb-0 md:mb-32"
-            dangerouslySetInnerHTML={{ __html: header.titre }}
-          ></div>
-          <div className="row-start-3 lg:col-span-2 animate-pulse">
-            <Link href="/about/#binome">
-              <a className="flex flex-col items-center">
+
+          <div className="row-start-2 lg:col-span-2 animate-pulse h-full">
+            <Link href="/webdesign-developpement-freelance-nord/#binome">
+              <a className="flex flex-col items-center justify-end h-full pb-6">
                 <span className="mb-2 text-[#41EAD4]">
                   {/* {header.enSavoirPlus.text} */}
                 </span>

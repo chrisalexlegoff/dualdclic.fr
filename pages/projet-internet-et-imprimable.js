@@ -1,9 +1,9 @@
 import Layout from "../components/Layout"
 import React from "react"
-import EnteteRealisations from "./../components/realisations/entete-realisations"
+import EnteteRealisations from "../components/realisations/entete-realisations"
 import RealisationsTab from "../components/realisations/realisations"
-import Mission from "./../components/realisations/mission"
-import { fetcher } from "./../api/backend"
+import Mission from "../components/realisations/mission"
+import { fetcher } from "../api/backend"
 import {
   URL_API_HOME,
   URL_API_REALISATIONS,
@@ -11,10 +11,10 @@ import {
   URL_API_HAMBURGER,
   URL_API_FOOTER,
   URL_API_SCROLLTOP,
-} from "./../api/url"
+} from "../api/url"
 
 export default function Realisations({
-  titrePage,
+  seo,
   logo,
   hamburger,
   footer,
@@ -29,7 +29,7 @@ export default function Realisations({
       logo={logo}
       hamburger={hamburger}
       footer={footer}
-      titrePage={titrePage}
+      seo={seo}
     >
       <div id="realisation">
         <EnteteRealisations header={header} />
@@ -52,7 +52,7 @@ export async function getStaticProps() {
       header: realisations.data.attributes.header,
       mission: home.data.attributes.mission,
       realisations: realisations.data.attributes.realisations,
-      titrePage: realisations.data.attributes.titrePage,
+      seo: realisations.data.attributes.seo,
       logo: logos.data.attributes.logo,
       hamburger: hamburger.data.attributes.hamburger,
       footer: footer.data.attributes,

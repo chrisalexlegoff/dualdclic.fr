@@ -9,7 +9,7 @@ const MentionsLegales = ({ mentionsLegales }) => {
           className="uppercase mx-auto text-center"
           dangerouslySetInnerHTML={{ __html: mentionsLegales.titre }}
         ></div>
-        <div className="h-[2px] bg-[#41EAD4] mx-auto mt-6 w-2/12"></div>
+        <div className="h-[1px] bg-[#41EAD4] mx-auto mt-10 w-[100px] lg:w-[200px]"></div>
       </div>
       <div
         className="uppercase mt-16 mb-10"

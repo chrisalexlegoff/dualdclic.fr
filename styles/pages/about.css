@@ -32,9 +32,14 @@
 #a-propos #presentation h4 {
   color: var(--rouge-orange);
 }
-#a-propos #presentation p,
-#a-propos #presentation .outils > h4 {
+#a-propos #presentation h3 > span {
+  color: var(--noir-paragraphe) !important;
+}
+#a-propos #presentation p {
   color: var(--noir-style);
+}
+#a-propos #presentation .presentationChris a:hover {
+  color: var(--rouge-orange);
 }
 #a-propos #presentation .competences {
   color: var(--blanc);

@@ -20,17 +20,20 @@ export const Navbar = ({ logo, hamburger, target }) => {
     } else if (regexQuery.test(path)) {
       path = path.split("?")[0]
     }
-    if (path == "/" || path == "/contact") {
+    if (path == "/" || path == "/contacter-freelance-nord") {
       let numberDesktop = 3
       let numberMobile = 5
       let numberHamburger = 2
       return { numberDesktop, numberMobile, numberHamburger }
-    } else if (path == "/about" || path == "/demander-un-devis") {
+    } else if (
+      path == "/webdesign-developpement-freelance-nord" ||
+      path == "/demander-un-devis"
+    ) {
       let numberDesktop = 0
       let numberMobile = 4
       let numberHamburger = 3
       return { numberDesktop, numberMobile, numberHamburger }
-    } else if (path == "/nos-prestations") {
+    } else if (path == "/prestation-web-print") {
       let numberDesktop = 2
       let numberMobile = 1
       let numberHamburger = 1
@@ -65,7 +68,7 @@ export const Navbar = ({ logo, hamburger, target }) => {
   }
 
   const classNormal =
-    "lg:inline-flex lg:w-auto w-full lg:px-3 px-0 lg:py-2 py-[1.8rem] lg:border-none border-b-[0.39px] border-noir-paragraphe items-center justify-center"
+    "lg:inline-flex lg:w-auto w-full lg:pr-3 px-0 lg:py-2 py-[1.8rem] lg:border-none border-b-[0.39px] border-noir-paragraphe items-center justify-center"
 
   useEffect(() => {
     const scrollNav = () => {
@@ -92,58 +95,60 @@ export const Navbar = ({ logo, hamburger, target }) => {
         id="nav"
         className="hidden lg:block opacity-0 shadow-[0px_2px_20px_rgba(0,0,0,0.14)] transition-opacity bg-nav fixed w-full z-10"
       >
-        <div className="max-w-9xl mx-16 my-2 flex items-center flex-wrap">
+        <div className="max-w-9xl mx-8 xl:mx-16 my-2 flex items-center flex-wrap flex-col xl:flex-row">
           <Link href="/" className="">
             <a className="p-2 mr-4 w-[200px]">{newLogoDesktop}</a>
           </Link>
 
-          <div className="li inline-flex flex-row ml-auto w-auto items-center h-auto">
-            <Link href="/about">
+          <div className="li inline-flex flex-row xl:ml-auto w-auto items-center h-auto">
+            <Link href="/webdesign-developpement-freelance-nord">
               <a
                 className={
-                  router.pathname == "/about"
+                  router.pathname == "/webdesign-developpement-freelance-nord"
                     ? `${classNormal} active`
-                    : classNormal
+                    : `${classNormal}`
                 }
               >
-                {router.pathname == "/about" ? "{ A propos }" : "A propos"}
+                {router.pathname == "/webdesign-developpement-freelance-nord"
+                  ? "{ A propos }"
+                  : "A propos"}
               </a>
             </Link>
-            <Link href="/nos-prestations">
+            <Link href="/prestation-web-print">
               <a
                 className={
-                  router.pathname == "/nos-prestations"
-                    ? `${classNormal} active`
-                    : classNormal
+                  router.pathname == "/prestation-web-print"
+                    ? `${classNormal} active lg:pl-10`
+                    : `${classNormal} lg:pl-10`
                 }
               >
-                {router.pathname == "/nos-prestations"
+                {router.pathname == "/prestation-web-print"
                   ? "{ Nos prestations }"
                   : "Nos prestations"}
               </a>
             </Link>
-            <Link href="/nos-realisations">
+            <Link href="/projet-internet-et-imprimable">
               <a
                 className={
-                  router.pathname == "/nos-realisations"
-                    ? `${classNormal} active`
-                    : classNormal
+                  router.pathname == "/projet-internet-et-imprimable"
+                    ? `${classNormal} active lg:pl-10`
+                    : `${classNormal} lg:pl-10`
                 }
               >
-                {router.pathname == "/nos-realisations"
+                {router.pathname == "/projet-internet-et-imprimable"
                   ? "{ Nos réalisations }"
                   : "Nos réalisations"}
               </a>
             </Link>
-            <Link href="/contact">
+            <Link href="/contacter-freelance-nord">
               <a
                 className={
-                  router.pathname == "/contact"
-                    ? `${classNormal} active`
-                    : classNormal
+                  router.pathname == "/contacter-freelance-nord"
+                    ? `${classNormal} active lg:pl-10`
+                    : `${classNormal} lg:pl-10`
                 }
               >
-                {router.pathname == "/contact"
+                {router.pathname == "/contacter-freelance-nord"
                   ? "{ Nous contacter }"
                   : "Nous contacter"}
               </a>
@@ -152,8 +157,8 @@ export const Navbar = ({ logo, hamburger, target }) => {
               <a
                 className={
                   router.pathname == "/demander-un-devis"
-                    ? `${classNormal} active`
-                    : classNormal
+                    ? `${classNormal} active lg:pl-10`
+                    : `${classNormal} lg:pl-10`
                 }
               >
                 {router.pathname == "/demander-un-devis"
@@ -199,52 +204,54 @@ export const Navbar = ({ logo, hamburger, target }) => {
                     : "Demander un devis"}
                 </a>
               </Link>
-              <Link href="/about">
+              <Link href="/webdesign-developpement-freelance-nord">
                 <a
                   className={
-                    router.pathname == "/about"
+                    router.pathname == "/webdesign-developpement-freelance-nord"
                       ? `${classNormal} active`
                       : classNormal
                   }
                 >
-                  {router.pathname == "/about" ? "{ A propos }" : "A propos"}
+                  {router.pathname == "/webdesign-developpement-freelance-nord"
+                    ? "{ A propos }"
+                    : "A propos"}
                 </a>
               </Link>
-              <Link href="/nos-prestations">
+              <Link href="/prestation-web-print">
                 <a
                   className={
-                    router.pathname == "/nos-prestations"
+                    router.pathname == "/prestation-web-print"
                       ? `${classNormal} active`
                       : classNormal
                   }
                 >
-                  {router.pathname == "/nos-prestations"
+                  {router.pathname == "/prestation-web-print"
                     ? "{ Nos prestations }"
                     : "Nos prestations"}
                 </a>
               </Link>
-              <Link href="/nos-realisations">
+              <Link href="/projet-internet-et-imprimable">
                 <a
                   className={
-                    router.pathname == "/nos-realisations"
+                    router.pathname == "/projet-internet-et-imprimable"
                       ? `${classNormal} active`
                       : classNormal
                   }
                 >
-                  {router.pathname == "/nos-realisations"
+                  {router.pathname == "/projet-internet-et-imprimable"
                     ? "{ Nos réalisations }"
                     : "Nos réalisations"}
                 </a>
               </Link>
-              <Link href="/contact">
+              <Link href="/contacter-freelance-nord">
                 <a
                   className={
-                    router.pathname == "/contact"
+                    router.pathname == "/contacter-freelance-nord"
                       ? `${classNormal} active`
                       : classNormal
                   }
                 >
-                  {router.pathname == "/contact"
+                  {router.pathname == "/contacter-freelance-nord"
                     ? "{ Nous contacter }"
                     : "Nous contacter"}
                 </a>

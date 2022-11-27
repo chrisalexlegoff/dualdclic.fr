@@ -13,13 +13,16 @@ const ErrorPage = ({ errorPage }) => {
         backgroundSize: "cover",
       }}
     >
-      <div className="max-w-9xl mx-auto h-screen grid gap-4 items-center text-center pt-20">
+      <div
+        id="error-page"
+        className="max-w-9xl mx-auto h-screen grid gap-4 items-center text-center pt-20"
+      >
         <div className="row-start-1">
           <div
             className="uppercase text-4xl w-[250px] mx-auto"
             dangerouslySetInnerHTML={{ __html: errorPage.errorPage.titre }}
           ></div>
-          <div className="h-[2px] bg-[#41EAD4] mx-auto mt-6 w-2/12"></div>
+          <div className="h-[1px] bg-[#41EAD4] mx-auto mt-10 w-[100px] lg:w-[200px]"></div>
         </div>
         <div className="row-start-3">
           <div

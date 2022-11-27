@@ -11,9 +11,9 @@ import {
 } from "../api/url"
 
 export default function Error404({
-  titrePage,
   logo,
   hamburger,
+  seo,
   footer,
   errorPage,
   scrollTop,
@@ -23,8 +23,8 @@ export default function Error404({
       scrollTop={scrollTop}
       logo={logo}
       hamburger={hamburger}
+      seo={seo}
       footer={footer}
-      titrePage={titrePage}
     >
       <ErrorPage errorPage={{ errorPage }} />
     </Layout>
@@ -40,7 +40,7 @@ export async function getStaticProps() {
   return {
     props: {
       errorPage: errorPage.data.attributes,
-      titrePage: errorPage.data.attributes.titrePage,
+      seo: errorPage.data.attributes.seo,
       logo: logos.data.attributes.logo,
       hamburger: hamburger.data.attributes.hamburger,
       footer: footer.data.attributes,

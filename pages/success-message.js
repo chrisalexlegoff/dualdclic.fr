@@ -16,7 +16,7 @@ export default function successMessage({
   footer,
   scrollTop,
   successForm,
-  titrePage,
+  seo,
 }) {
   return (
     <Layout
@@ -24,7 +24,7 @@ export default function successMessage({
       logo={logo}
       hamburger={hamburger}
       footer={footer}
-      titrePage={titrePage}
+      seo={seo}
     >
       <div id="success-message">
         <SuccessForm successForm={successForm} />
@@ -42,7 +42,7 @@ export async function getStaticProps() {
   return {
     props: {
       successForm: successForm.data.attributes,
-      titrePage: successForm.data.attributes.titrePage,
+      seo: successForm.data.attributes.seo,
       logo: logos.data.attributes.logo,
       hamburger: hamburger.data.attributes.hamburger,
       footer: footer.data.attributes,

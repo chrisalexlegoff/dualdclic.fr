@@ -24,11 +24,22 @@ export const poster = async (url, data) => {
 export const uploadFile = async (file) => {
   let formData = new FormData()
   formData.append("files", file)
-  Axios({
-    method: "post",
-    url: process.env.NEXT_PUBLIC_API_UPLOAD_URL,
-    data: formData,
-  }).catch((error) => {
+  try {
+    const { data: response } = await Axios({
+      method: "post",
+      url: process.env.NEXT_PUBLIC_API_UPLOAD_URL,
+      data: formData,
+    })
+    return response
+  } catch (error) {
     console.error("There was an error!", error)
-  })
+  }
+
+  // .then((response) => {
+  //   const data = response.data
+  //   return data
+  // })
+  // .catch((error) => {
+
+  // })
 }

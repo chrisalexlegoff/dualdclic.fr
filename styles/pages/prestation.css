@@ -14,7 +14,8 @@
   color: var(--noir-style);
 }
 #prestation #expertise h2 > span,
-#prestation #expertise .objectif h2 > span {
+#prestation .objectif h2 > span,
+#prestation .objectif h3 > span {
   color: var(--rouge-orange) !important;
 }
 #prestation #expertise .expertise-card-recto h3 {
@@ -32,7 +33,7 @@
 }
 /* methodologie */
 #prestation #methodologie h2,
-#prestation #methodologie h4 {
+#prestation #methodologie p {
   color: var(--blanc);
 }
 #prestation .projet h2,
@@ -48,7 +49,7 @@
   color: var(--noir-paragraphe);
 }
 #prestation .projet h2 > span {
-  color: var(--bleu-clair) !important;
+  color: var(--vert) !important;
 }
 #prestation .projet p > span {
   color: var(--rouge-orange) !important;
