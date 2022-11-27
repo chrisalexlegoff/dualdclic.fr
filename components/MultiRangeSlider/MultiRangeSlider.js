@@ -18,6 +18,7 @@ const MultiRangeSlider = ({
   useEffect(() => {
     setMinVal(minValueRange)
     setMaxVal(maxValueRange)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // Convert to percentage
@@ -30,10 +31,13 @@ const MultiRangeSlider = ({
   useEffect(() => {
     if (maxValRef.current) {
       const minPercent = getPercent(minVal)
+      // @ts-ignore
       const maxPercent = getPercent(+maxValRef.current.value) // Preceding with '+' converts the value from type string to type number
 
       if (range.current) {
+        // @ts-ignore
         range.current.style.left = `${minPercent}%`
+        // @ts-ignore
         range.current.style.width = `${maxPercent - minPercent}%`
       }
     }
@@ -42,11 +46,14 @@ const MultiRangeSlider = ({
   // Set width of the range to decrease from the right side
   useEffect(() => {
     if (minValRef.current) {
+      // @ts-ignore
       const minPercent = getPercent(+minValRef.current.value)
       const maxPercent = getPercent(maxVal)
 
       if (range.current) {
+        // @ts-ignore
         range.current.style.left = `${minPercent}%`
+        // @ts-ignore
         range.current.style.width = `${maxPercent - minPercent}%`
       }
     }
