@@ -1,17 +1,32 @@
 // @ts-ignore
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Link from "next/link"
-import LazyImage from "./../../lib/lazy-images"
-import MultiRangeSlider from "./../MultiRangeSlider/MultiRangeSlider"
+import LazyImage from "../../lib/lazy-images"
+import MultiRangeSlider from "../MultiRangeSlider/MultiRangeSlider"
 import FileUnUpload from "../files-uploads/fileUnUpload"
 import FileDeuxUpload from "../files-uploads/fileDeuxUpload"
 import FileTroisUpload from "../files-uploads/fileTroisUpload"
 import { useRouter } from "next/router"
-import { uuid } from "./../../lib/uuid"
+import { uuid } from "../../lib/uuid"
 import { poster } from "../../api/backend"
-import { uploadFile } from "./../../api/backend"
+import { uploadFile } from "../../api/backend"
+import { MyDocument } from "../../lib/from-devis-to-pdf"
 
 const Questionnaire = ({ devis }) => {
+  const [messagesError, setMessagesError] = useState(false)
+  useEffect(() => {
+    const node = document.querySelectorAll(".message-erreur")
+    if (node.length > 0) {
+      if (messagesError) {
+        // @ts-ignore
+        node.item(0).closest(".closest").setAttribute("id", "first")
+      } else {
+        // @ts-ignore
+        node.item(0).closest(".closest").removeAttribute("id")
+      }
+    }
+  }, [messagesError])
+
   const router = useRouter()
   const uncheckedIcon = LazyImage(
     devis.besoinUn.icon.data[1].attributes,
@@ -343,6 +358,12 @@ const Questionnaire = ({ devis }) => {
       besoins
     ) {
       setPart(!part)
+      router.push("/demander-un-devis#formulaire-devis")
+    } else {
+      setMessagesError(true)
+      router
+        .push("/demander-un-devis#first")
+        .then(() => setMessagesError(false))
     }
 
     if (devisEnCours.activiteEntreprise.input.length == 0)
@@ -363,95 +384,206 @@ const Questionnaire = ({ devis }) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     const budget = checked.besoinTextUn || checked.besoinTextDeux
-    if (devisEnCours.personneEntreprise.inputNom.length == 0)
-      setErrorPersonneEntrepriseInputNom(true)
-    if (devisEnCours.personneEntreprise.inputPrenom.length == 0)
-      setErrorPersonneEntrepriseInputPrenom(true)
-    if (devisEnCours.personneEntreprise.inputMail.length == 0)
-      setErrorPersonneEntrepriseInputMail(true)
+    const nomLenght = devisEnCours.personneEntreprise.inputNom.length == 0
+    const prenomLenght = devisEnCours.personneEntreprise.inputPrenom.length == 0
+    const mailLenght = devisEnCours.personneEntreprise.inputMail.length == 0
     const personne = checked.textUnChecked || checked.textDeuxChecked
     const terms = checked.checkTerms
     const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    if (
+
+    const mailRegex =
       devisEnCours.personneEntreprise.inputMail.length > 0 &&
       !mailformat.test(devisEnCours.personneEntreprise.inputMail)
-    )
-      setErrorPersonneEntrepriseInputMailRegex(true)
-    if (!budget) setErrorBudgetEntreprise(true)
-    if (!personne) setErrorPersonneEntreprise(true)
-    if (!terms) setErrorCheckTermsEntreprise(true)
+    !budget && setErrorBudgetEntreprise(true)
+    !personne && setErrorPersonneEntreprise(true)
+    !terms && setErrorCheckTermsEntreprise(true)
+    nomLenght && setErrorPersonneEntrepriseInputNom(true)
+    prenomLenght && setErrorPersonneEntrepriseInputPrenom(true)
+    mailLenght && setErrorPersonneEntrepriseInputMail(true)
+    mailRegex && setErrorPersonneEntrepriseInputMailRegex(true)
+
     const errorSubmit =
       !budget ||
       !personne ||
-      errorPersonneEntrepriseInputMail ||
-      errorPersonneEntrepriseInputNom ||
-      errorPersonneEntrepriseInputPrenom ||
-      errorPersonneEntrepriseInputMailRegex ||
+      nomLenght ||
+      prenomLenght ||
+      mailLenght ||
+      mailRegex ||
       !terms
-
     if (!errorSubmit) {
       const uuidEnCours = uuid()
-      const data = {
-        identifiant: uuidEnCours,
-        nomEntreprise: {
-          input: devisEnCours.nomEntreprise.input,
-        },
-        activiteEntreprise: {
-          input: devisEnCours.activiteEntreprise.input,
-        },
-        besoinsUn: { checked: checked.besoinsUn },
-        besoinsDeux: { checked: checked.besoinsDeux },
-        besoinsTrois: { checked: checked.besoinsTrois },
-        besoinsQuatre: { checked: checked.besoinsQuatre },
-        besoinsCinq: { checked: checked.besoinsCinq },
-        besoinsSix: { checked: checked.besoinsSix },
-        besoinsSept: { checked: checked.besoinsSept },
-        besoinsHuit: { checked: checked.besoinsHuit },
-        besoinsNeuf: { checked: checked.besoinsNeuf },
-        besoinsDix: {
-          checked: checked.besoinsDix,
-          input: devisEnCours.besoinsDix.input,
-        },
-        besoinsOnze: { checked: checked.besoinsOnze },
-        besoinsDouze: { checked: checked.besoinsDouze },
-        besoinsTreize: { checked: checked.besoinsTreize },
-        besoinsQuatorze: { checked: checked.besoinsQuatorze },
-        besoinsQuinze: { checked: checked.besoinsQuinze },
-        besoinsSeize: { checked: checked.besoinsSeize },
-        besoinsDixSept: { checked: checked.besoinsDixSept },
-        besoinsDixHuit: { checked: checked.besoinsDixHuit },
-        besoinsDixNeuf: { checked: checked.besoinsDixNeuf },
-        besoinsVingt: { checked: checked.besoinsVingt },
-        budgetEntreprise: {
-          minValue: minValueRange,
-          maxValue: maxValueRange,
-        },
-        commentaireEntreprise: {
-          input: devisEnCours.commentaireEntreprise.input,
-        },
-        uploadFilesEntreprise: { fileUnName, fileDeuxName },
-        contraintesEntreprise: {
-          input: devisEnCours.contraintesEntreprise.input,
-        },
-        fonctionnalitesEntreprise: {
-          input: devisEnCours.fonctionnalitesEntreprise.input,
-        },
-        pourquoiProjetEntreprise: {
-          input: devisEnCours.activiteEntreprise.input,
-        },
-        personneEntreprise: {
-          textUnChecked: checked.textUnChecked,
-          textDeuxChecked: checked.textDeuxChecked,
-          inputNom: devisEnCours.personneEntreprise.inputNom,
-          inputPrenom: devisEnCours.personneEntreprise.inputPrenom,
-          inputMail: devisEnCours.personneEntreprise.inputMail,
-        },
-      }
+      const sendFiles = async () => {
+        try {
+          let url = {}
+          fileUn &&
+            uploadFile(fileUn).then(
+              (response) => (url.urlFileUn = response[0].url)
+            )
+          fileDeux &&
+            uploadFile(fileDeux).then(
+              (response) => (url.urlFileDeux = response[0].url)
+            )
 
-      fileUn && uploadFile(fileUn)
-      fileDeux && uploadFile(fileDeux)
-      fileTrois && uploadFile(fileTrois)
-      poster("/form-devis", data).then(() => router.push("/success-message"))
+          fileTrois &&
+            uploadFile(fileTrois).then(
+              (response) => (url.urlFileTrois = response[0].url)
+            )
+          return url
+        } catch (error) {
+          console.error("There was an error!", error)
+        }
+      }
+      sendFiles()
+        .then((url) => {
+          const data = {
+            urlFiles: url,
+            identifiant: uuidEnCours,
+            img: devis.img,
+            nomEntreprise: {
+              input: devisEnCours.nomEntreprise.input,
+            },
+            activiteEntreprise: {
+              input: devisEnCours.activiteEntreprise.input,
+            },
+            besoins: {
+              besoinsUn: {
+                checked: checked.besoinsUn,
+                text: devis.besoinUn.text,
+              },
+
+              besoinsDeux: {
+                checked: checked.besoinsDeux,
+                text: devis.besoinsDeux.text,
+              },
+
+              besoinsTrois: {
+                checked: checked.besoinsTrois,
+                text: devis.besoinsTrois.text,
+              },
+
+              besoinsQuatre: {
+                checked: checked.besoinsQuatre,
+                text: devis.besoinsQuatre.text,
+              },
+
+              besoinsCinq: {
+                checked: checked.besoinsCinq,
+                text: devis.besoinsCinq.text,
+              },
+
+              besoinsSix: {
+                checked: checked.besoinsSix,
+                text: devis.besoinsSix.text,
+              },
+
+              besoinsSept: {
+                checked: checked.besoinsSept,
+                text: devis.besoinsSept.text,
+              },
+
+              besoinsHuit: {
+                checked: checked.besoinsHuit,
+                text: devis.besoinsHuit.text,
+              },
+
+              besoinsNeuf: {
+                checked: checked.besoinsNeuf,
+                text: devis.besoinsNeuf.text,
+              },
+
+              besoinsDix: {
+                checked: checked.besoinsDix,
+                input: devisEnCours.besoinsDix.input,
+                text: devis.besoinsDix.text,
+              },
+
+              besoinsOnze: {
+                checked: checked.besoinsOnze,
+                text: devis.besoinsOnze.text,
+              },
+
+              besoinsDouze: {
+                checked: checked.besoinsDouze,
+                text: devis.besoinsDouze.text,
+              },
+
+              besoinsTreize: {
+                checked: checked.besoinsTreize,
+                text: devis.besoinsTreize.text,
+              },
+
+              besoinsQuatorze: {
+                checked: checked.besoinsQuatorze,
+                text: devis.besoinsQuatorze.text,
+              },
+
+              besoinsQuinze: {
+                checked: checked.besoinsQuinze,
+                text: devis.besoinsQuinze.text,
+              },
+
+              besoinsSeize: {
+                checked: checked.besoinsSeize,
+                text: devis.besoinsSeize.text,
+              },
+
+              besoinsDixSept: {
+                checked: checked.besoinsDixSept,
+                text: devis.besoinsDixSept.text,
+              },
+
+              besoinsDixHuit: {
+                checked: checked.besoinsDixHuit,
+                text: devis.besoinsDixHuit.text,
+              },
+
+              besoinsDixNeuf: {
+                checked: checked.besoinsDixNeuf,
+                text: devis.besoinsDixNeuf.text,
+              },
+
+              besoinsVingt: {
+                checked: checked.besoinsVingt,
+                text: devis.besoinsVingt.text,
+              },
+            },
+            budgetEntreprise: {
+              minValue: minValueRange,
+              maxValue: maxValueRange,
+              checked: checked.besoinTextUn,
+            },
+            commentaireEntreprise: {
+              input: devisEnCours.commentaireEntreprise.input,
+            },
+            uploadFilesEntreprise: {
+              fileUnName: fileUnName,
+              fileDeuxName: fileDeuxName,
+              fileTroisName: fileTroisName,
+            },
+            contraintesEntreprise: {
+              input: devisEnCours.contraintesEntreprise.input,
+            },
+            fonctionnalitesEntreprise: {
+              input: devisEnCours.fonctionnalitesEntreprise.input,
+            },
+            pourquoiProjetEntreprise: {
+              input: devisEnCours.pourquoiProjetEntreprise.input,
+            },
+            personneEntreprise: {
+              textUnChecked: checked.textUnChecked,
+              textDeuxChecked: checked.textDeuxChecked,
+              inputNom: devisEnCours.personneEntreprise.inputNom,
+              inputPrenom: devisEnCours.personneEntreprise.inputPrenom,
+              inputMail: devisEnCours.personneEntreprise.inputMail,
+            },
+          }
+          return data
+        })
+        .then((data) => {
+          poster("/form-devis", data)
+            .then(() => MyDocument(data))
+            .then(() => router.push("/success-message"))
+        })
 
       setDevisEnCours({
         nomEntreprise: {
@@ -536,15 +668,11 @@ const Questionnaire = ({ devis }) => {
           errorMessageInputMailRegex: "",
         },
       })
-      // setMessage(!message)
-      // window.scrollTo({
-      //   top: 1400,
-      //   left: 0,
-      //   behavior: "smooth",
-      // })
-      // setTimeout(() => {
-      //   router.push("/")
-      // }, 5000)
+    } else {
+      setMessagesError(true)
+      router
+        .push("/demander-un-devis#first")
+        .then(() => setMessagesError(false))
     }
   }
 
@@ -750,19 +878,23 @@ const Questionnaire = ({ devis }) => {
     })
   }
   return (
-    <div id="formulaire-devis" className="pb-0 lg:pb-24 pt-0 lg:pt-20 mx-auto">
+    <div id="formulaire-devis" className="pb-0 lg:pb-24 pt-10 lg:pt-20 mx-auto">
       <div
         className="uppercase mb-12 text-center px-10 md:px-0"
         dangerouslySetInnerHTML={{ __html: devis.titre }}
       ></div>
-      <div className="mb-12 h-[2px] bg-vert mx-auto mt-6 w-1/12"></div>
+      <div className="mb-12 h-[1px] bg-vert mx-auto mt-10 w-[100px] lg:w-[200px]"></div>
+      <div
+        className="mx-auto w-4/5 lg:w-3/4 max-w-[800px] mb-20"
+        dangerouslySetInnerHTML={{ __html: devis.entete }}
+      ></div>
       <div>
         {!message ? (
           <form onSubmit={handleSubmit} noValidate className="mx-auto">
             {!part ? (
               <div className="mx-auto grid gap-4 items-center">
                 {/* NOM ENTREPRISE */}
-                <div className="bg-fond-gris">
+                <div className="closest bg-fond-gris">
                   <div className="max-w-5xl py-16 w-3/4 mx-auto">
                     <div
                       className=""
@@ -806,7 +938,7 @@ const Questionnaire = ({ devis }) => {
                     )}
                   </div>
                 </div>
-                <div className="">
+                <div className="closest">
                   <div className="py-16 w-3/4 max-w-5xl mx-auto">
                     <div
                       className=""
@@ -849,7 +981,7 @@ const Questionnaire = ({ devis }) => {
                     )}
                   </div>
                 </div>
-                <div className="bg-fond-gris">
+                <div className="closest bg-fond-gris">
                   {" "}
                   <div className="max-w-5xl text-noir-paragraphe py-16 w-3/4 mx-auto">
                     <div
@@ -1022,7 +1154,7 @@ const Questionnaire = ({ devis }) => {
                               id={devis.besoinsDix.text}
                               name={devis.besoinsDix.text}
                               placeholder={devis.besoinsDix.placeholder}
-                              className="shadow appearance-none border-[2px] border-noir-paragraphe rounded py-2 px-3 h-[30px] text-noir-paragraphe leading-tight focus:outline-none focus:shadow-outline placeholder:text-noir-paragraphe placeholder:text-xs flex-1 mr-4 mb-2 lg:mb-0"
+                              className="shadow appearance-none border-[2px] border-noir-paragraphe rounded py-2 px-3 h-[30px] text-noir-paragraphe leading-tight focus:outline-none focus:shadow-outline placeholder:text-noir-paragraphe placeholder:text-sm flex-1 mr-4 mb-2 lg:mb-0"
                               value={devisEnCours.besoinsDix.input}
                               required
                             />
@@ -1194,7 +1326,7 @@ const Questionnaire = ({ devis }) => {
                     )}
                   </div>
                 </div>
-                <div className="">
+                <div className="closest">
                   <div className="py-16 w-3/4 max-w-5xl mx-auto pb-10">
                     <div
                       className=""
@@ -1239,7 +1371,7 @@ const Questionnaire = ({ devis }) => {
                     )}
                   </div>
                 </div>
-                <div className="bg-fond-gris">
+                <div className="closest bg-fond-gris">
                   <div className="py-16 w-3/4 max-w-5xl mx-auto pb-10">
                     <div
                       className=""
@@ -1274,15 +1406,15 @@ const Questionnaire = ({ devis }) => {
                     />
                   </div>
                 </div>
-                <div className="">
+                <div className="closest">
                   {" "}
-                  <div className="py-16 w-3/4 max-w-5xl mx-auto flex flex-row">
+                  <div className="py-16 w-11/12 md:w-3/4 max-w-5xl mx-auto flex flex-row">
                     <div className="grow">
                       <Link href="/">
                         <a>
                           <button
                             type="button"
-                            className="group bg-transparent hover:bg-vert w-2/3 h-20 block rounded-lg border-2 border-vert"
+                            className="group bg-transparent hover:bg-vert w-11/12 md:w-2/3 h-20 block rounded-lg border-2 border-vert"
                           >
                             <span
                               dangerouslySetInnerHTML={{
@@ -1310,7 +1442,7 @@ const Questionnaire = ({ devis }) => {
             ) : (
               //DEBUT PARTIE 2
               <div className="mx-auto grid gap-4 items-center">
-                <div className="bg-fond-gris">
+                <div className="closest bg-fond-gris">
                   {" "}
                   <div className="py-16 w-3/4 max-w-5xl mx-auto">
                     <div
@@ -1346,7 +1478,7 @@ const Questionnaire = ({ devis }) => {
                     />
                   </div>
                 </div>
-                <div className="">
+                <div className="closest">
                   <div className="py-16 w-3/4 max-w-5xl mx-auto">
                     <div
                       className="mb-6"
@@ -1411,7 +1543,7 @@ const Questionnaire = ({ devis }) => {
                     )}
                   </div>
                 </div>
-                <div className="bg-fond-gris">
+                <div className="closest bg-fond-gris">
                   {" "}
                   <div className="py-16 w-3/4 max-w-5xl mx-auto">
                     <div
@@ -1442,7 +1574,7 @@ const Questionnaire = ({ devis }) => {
                     />
                   </div>
                 </div>
-                <div className="">
+                <div className="closest">
                   <div className="py-16 w-3/4 max-w-5xl mx-auto">
                     <div
                       className=""
@@ -1526,7 +1658,7 @@ const Questionnaire = ({ devis }) => {
                     </div>
                   </div>
                 </div>
-                <div className="bg-fond-gris">
+                <div className="closest bg-fond-gris">
                   <div className="py-16 w-3/4 max-w-5xl mx-auto">
                     <div
                       className="mb-6"
@@ -1752,7 +1884,7 @@ const Questionnaire = ({ devis }) => {
                     </div>
                   </div>
                 </div>
-                <div className="">
+                <div className="closest">
                   <div className="py-16 w-3/4 max-w-5xl mx-auto">
                     <div className="flex items-center">
                       <div
@@ -1779,14 +1911,14 @@ const Questionnaire = ({ devis }) => {
                   </div>
                 </div>
                 <div className=""></div>
-                <div className="py-16 w-3/4 max-w-5xl mx-auto flex flex-row">
+                <div className="py-16 w-11/12 md:w-3/4 max-w-5xl mx-auto flex flex-row">
                   <div className="grow">
                     <Link href="/">
                       <a>
                         <button
                           type="button"
                           onClick={(event) => firstPart(event)}
-                          className="group bg-transparent hover:bg-[#2E437D] w-2/3 h-20 block rounded-lg border-2 border-[#2E437D]"
+                          className="group bg-transparent hover:bg-[#2E437D] w-11/12 md:w-2/3 h-20 block rounded-lg border-2 border-[#2E437D]"
                         >
                           <span
                             dangerouslySetInnerHTML={{

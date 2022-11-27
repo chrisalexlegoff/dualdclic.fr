@@ -1,17 +1,19 @@
 /* ACCUEIL */
 /* Accueil-entete */
 #accueil #accueil-entete h1,
-#accueil #accueil-entete p {
+#accueil #accueil-entete h2 {
   color: var(--blanc) !important;
 }
 /* nous */
 #accueil #nous h2,
 #accueil #nous h3 {
-  color: var(--bleu-fonce) !important;
+  color: var(--noir-style) !important;
 }
 #accueil #nous h2 > span,
-#accueil #nous h3 > span,
-#accueil #nous .span > h3 {
+#accueil #nous h3 > span {
+  color: var(--rouge-orange) !important;
+}
+#accueil #nous .h2-bis > h2 > span {
   color: var(--bleu-clair) !important;
 }
 #accueil #image-deco-accueil {
@@ -83,18 +85,23 @@
 #accueil #services h2 > span {
   color: var(--bleu-clair) !important;
 }
+#accueil .objectif h2 > span,
+#accueil .objectif h3 > span {
+  color: var(--rouge-orange) !important;
+}
 /* Missions */
-#accueil #missions h2,
+#accueil #missions h2 {
+  color: var(--blanc);
+}
 #accueil #missions h3,
 #accueil #missions p {
   color: var(--noir-style);
 }
-#accueil #missions h2 > span {
+#accueil #missions h2 > span,
+#accueil #missions .projet h2 > span {
   color: var(--vert) !important;
 }
-#accueil #missions .projet h2 > span {
-  color: var(--bleu-clair) !important;
-}
+
 #accueil #missions .projet p > span {
   color: var(--rouge-orange) !important;
 }

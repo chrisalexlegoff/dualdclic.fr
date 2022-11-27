@@ -6,7 +6,7 @@ const Preambule = ({ preambule }) => {
   return (
     <div
       id="preambule"
-      className="max-w-9xl pb-10 lg:pb-24 pt-20 lg:pt-40 mx-auto"
+      className="max-w-9xl pb-0 lg:pb-24 pt-20 lg:pt-40 mx-auto"
     >
       <div className="mx-auto hidden lg:grid grid-cols-2 gap-4 items-center justify-start text-left">
         <div
@@ -18,7 +18,7 @@ const Preambule = ({ preambule }) => {
             backgroundPosition: "bottom",
             backgroundSize: "cover ",
           }}
-          className="h-full rounded-t-lg w-4/5 ml-auto mr-10"
+          className="h-full rounded-xl w-4/5 ml-auto mr-10"
         ></div>
         <div className="">
           <div className="flex flex-col h-full justify-center items-center rounded-2xl bg-blue-binome pl-20 py-16 -translate-x-32 -translate-y-10">
@@ -54,7 +54,7 @@ const Preambule = ({ preambule }) => {
           backgroundPosition: "bottom",
           backgroundSize: "cover",
         }}
-        className="h-[500px] rounded-2xl mx-auto block lg:hidden text-center w-5/6 mb-16"
+        className="h-[500px] rounded-2xl mx-auto block lg:hidden text-center w-11/12 md:w-5/6 mb-16"
       >
         {" "}
         <div className="flex flex-col justify-evenly items-center h-full rounded-2xl bg-blue-binome px-12 py-8 mx-auto">
@@ -66,7 +66,7 @@ const Preambule = ({ preambule }) => {
             className="text-left"
             dangerouslySetInnerHTML={{ __html: preambule.paragraphe }}
           ></div>
-          <div className="mx-auto w-3/4 lg:w-1/2 mt-6">
+          <div className="mx-auto w-full md:w-3/4 lg:w-1/2 mt-6">
             <Link href="/demander-un-devis/#formulaire-devis">
               <a>
                 <button className="group bg-transparent hover:bg-rouge-orange w-full h-20 mx-auto lg:m-0 block rounded-lg border-2 border-rouge-orange">

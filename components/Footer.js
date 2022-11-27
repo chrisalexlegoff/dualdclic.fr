@@ -9,20 +9,20 @@ const Footer = ({ footer }) => {
       {" "}
       <div
         id="footer"
-        className="hidden md:block bg-footer shadow-[inset_0px_7px_12px_rgba(0,0,0,0.25)]"
+        className="pl-10 pr-16 hidden lg:block bg-footer shadow-[inset_0px_7px_12px_rgba(0,0,0,0.25)]"
       >
-        <div className="max-w-9xl mx-auto grid xl:grid-col-3 lg:grid-col-2 auto-cols-fr auto-rows-fr justify-items-center lg:py-24 py-12">
-          <div className="xl:col-start-1 xl:row-start-1 xl:col-span-1 lg:row-start-2 lg:col-span-2 w-3/4 flex h-[350px] flex-col text-center justify-between lg:m-10 xl:m-4 m-12">
-            <div className="mx-auto w-1/2">{logo}</div>
-            <div
-              className="mx-auto"
-              dangerouslySetInnerHTML={{ __html: footer.paragraphe }}
-            ></div>
+        <div className="max-w-9xl mx-auto grid lg:grid-col-2 xl:grid-col-3 auto-cols-fr auto-rows-fr justify-items-center lg:py-24 py-12">
+          <div className="lg:col-start-1 lg:row-start-1 lg:col-span-1 w-3/4 flex h-[350px] flex-col text-center justify-between lg:m-4 m-12">
+            <div className="mx-auto w-1/2">{logo}</div>{" "}
             <div
               className="mx-auto uppercase"
               dangerouslySetInnerHTML={{ __html: footer.titre4 }}
             ></div>
-            <div className="mx-auto w-full">
+            <div
+              className="mx-auto"
+              dangerouslySetInnerHTML={{ __html: footer.paragraphe }}
+            ></div>
+            {/* <div className="mx-auto w-full">
               <Link href="/demander-un-devis">
                 <a>
                   <button className="group bg-transparent border-white  hover:border-vert w-2/3 lg:w-full h-20 mx-auto block rounded-lg border-2">
@@ -33,19 +33,19 @@ const Footer = ({ footer }) => {
                   </button>
                 </a>
               </Link>
-            </div>
+            </div> */}
             <div
               className="mx-auto text-sm"
               dangerouslySetInnerHTML={{ __html: footer.copyright }}
             ></div>
           </div>
-          <div className="nav xl:col-start-2 flex flex-col h-[350px] lg:m-4 m-12">
+          <div className="nav hidden xl:flex xl:col-start-2 flex-col h-[350px] lg:m-4 m-12">
             {" "}
             <div
-              className=" text-center lg:text-left mb-4"
+              className="uppercase text-center lg:text-left mb-4"
               dangerouslySetInnerHTML={{ __html: footer.titre4bis }}
             ></div>
-            <div className="li group flex flex-col ml-2 lg:h-full h-[250px] justify-between text-center lg:text-left">
+            <div className="li group flex flex-col lg:h-full h-[250px] justify-between text-center lg:text-left">
               {footer.nav.map((item) => (
                 <Link key={item.id} href={item.lien}>
                   <a className="">{item.slug}</a>
@@ -53,11 +53,11 @@ const Footer = ({ footer }) => {
               ))}
             </div>
           </div>
-          <div className="xl:col-start-3 flex flex-col h-[350px] justify-between lg:m-4 m-12">
+          <div className="lg:col-start-2 xl:col-start-3 flex flex-col h-[350px] justify-between lg:m-4 m-12">
             {" "}
             <div>
               <div
-                className="text-center lg:text-left mb-4"
+                className="uppercase text-center lg:text-left mb-4"
                 dangerouslySetInnerHTML={{ __html: footer.titre4tierce }}
               ></div>
               <div className="flex justify-center lg:justify-start">
@@ -87,9 +87,21 @@ const Footer = ({ footer }) => {
                 ))}
               </div>
             </div>
+            <div className="mx-auto w-full">
+              <Link href="/demander-un-devis">
+                <a>
+                  <button className="group bg-transparent border-white  hover:border-vert w-2/3 lg:w-full h-[3.4rem] mx-auto block rounded-lg border-2">
+                    <span
+                      dangerouslySetInnerHTML={{ __html: footer.button }}
+                      className=" text-white group-hover:text-vert"
+                    />
+                  </button>
+                </a>
+              </Link>
+            </div>
             <div className="">
               <div
-                className="text-center lg:text-left mb-4"
+                className="uppercase text-center lg:text-left mb-4"
                 dangerouslySetInnerHTML={{ __html: footer.titre4quarto }}
               ></div>
               <p className="text-center lg:text-left">
@@ -113,7 +125,7 @@ const Footer = ({ footer }) => {
       </div>
       <div
         id="footer-mobile"
-        className="block md:hidden bg-footer shadow-[inset_0px_7px_12px_rgba(0,0,0,0.25)]"
+        className="block lg:hidden bg-footer shadow-[inset_0px_7px_12px_rgba(0,0,0,0.25)]"
       >
         <div className="mx-auto grid justify-items-center py-12 w-5/6">
           <div className="flex flex-col text-center justify-around">
@@ -170,7 +182,7 @@ const Footer = ({ footer }) => {
           <div className="mx-auto w-full my-10">
             <Link href="/demander-un-devis">
               <a>
-                <button className="group bg-transparent border-white  hover:border-vert w-full h-[50px] mx-auto block rounded-lg border-2">
+                <button className="group bg-transparent border-white  hover:border-vert w-full h-[3.4rem] mx-auto block rounded-lg border-2">
                   <span
                     dangerouslySetInnerHTML={{ __html: footer.button }}
                     className=" text-white group-hover:text-vert"

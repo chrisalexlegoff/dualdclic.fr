@@ -4,8 +4,22 @@ import LazyImage from "../../lib/lazy-images"
 import { useRouter } from "next/router"
 import { uuid } from "./../../lib/uuid"
 import { poster } from "../../api/backend"
+import { sendContactForm } from "./../../lib/mail"
 
 const ContactForm = ({ contact }) => {
+  const [messagesError, setMessagesError] = useState(false)
+  useEffect(() => {
+    const node = document.querySelectorAll(".message-erreur")
+    if (node.length > 0) {
+      if (messagesError) {
+        // @ts-ignore
+        node.item(0).closest(".closest").setAttribute("id", "first")
+      } else {
+        // @ts-ignore
+        node.item(0).closest(".closest").removeAttribute("id")
+      }
+    }
+  }, [messagesError])
   const router = useRouter()
   const uncheckedIcon = LazyImage(
     contact.checkTerms.icons.data[1].attributes,
@@ -24,8 +38,7 @@ const ContactForm = ({ contact }) => {
     "",
     "mx-auto lg:flex hidden w-3/4 max-w-5xl justify-end"
   )
-  const [errorSubmit, setErrorSubmit] = useState(false)
-  const [testEnvoi, setTestEnvoi] = useState(false)
+
   const [errorContactFormInputNom, setErrorContactFormInputNom] =
     useState(false)
   const [errorContactFormInputMessage, setErrorContactFormInputMessage] =
@@ -36,23 +49,7 @@ const ContactForm = ({ contact }) => {
     useState(false)
   const [errorCheckTermsContactForm, setErrorCheckTermsContactForm] =
     useState(false)
-  useEffect(() => {
-    setErrorSubmit(
-      errorContactFormInputMail ||
-        errorContactFormInputNom ||
-        errorContactFormInputMessage ||
-        errorContactFormInputMailRegex ||
-        errorCheckTermsContactForm
-    )
-  }, [
-    errorContactFormInputMail,
-    errorContactFormInputNom,
-    errorContactFormInputMessage,
-    errorContactFormInputMailRegex,
-    errorCheckTermsContactForm,
-  ])
   const [message, setMessage] = useState(false)
-
   // @ts-ignore
   const [checked, setChecked] = useState({
     checkTerms: false,
@@ -97,20 +94,26 @@ const ContactForm = ({ contact }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    if (contactEnCours.inputNom.length == 0) setErrorContactFormInputNom(true)
-    if (contactEnCours.inputMessage.length == 0)
-      setErrorContactFormInputMessage(true)
-    if (contactEnCours.inputMail.length == 0) setErrorContactFormInputMail(true)
+    const nomLength = contactEnCours.inputNom.length == 0
+    const messageLength = contactEnCours.inputMessage.length == 0
+    const mailLength = contactEnCours.inputMail.length == 0
     const terms = checked.checkTerms
     const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    if (
+    const mailRegex =
       contactEnCours.inputMail.length > 0 &&
       !mailformat.test(contactEnCours.inputMail)
-    )
-      setErrorContactFormInputMailRegex(true)
-    if (!terms) setErrorCheckTermsContactForm(true)
+
+    !terms && setErrorCheckTermsContactForm(true)
+    nomLength && setErrorContactFormInputNom(true)
+    messageLength && setErrorContactFormInputMessage(true)
+    mailLength && setErrorContactFormInputMail(true)
+    mailRegex && setErrorContactFormInputMailRegex(true)
+
+    const errorSubmit =
+      mailLength || nomLength || messageLength || mailRegex || !terms
+
     if (!errorSubmit) {
-      setTestEnvoi(true)
+      // setTestEnvoi(true)
       const uuidEnCours = uuid()
       const data = {
         identifiant: uuidEnCours,
@@ -124,20 +127,13 @@ const ContactForm = ({ contact }) => {
         },
       }
 
-      testEnvoi &&
-        poster("/contact-forms", data).then(() =>
-          router.push("/success-message")
-        )
-      // poster("/contact-forms", data).then(() => setMessage(!message))
-
-      // window.scrollTo({
-      //   top: 1400,
-      //   left: 0,
-      //   behavior: "smooth",
-      // })
-      // setTimeout(() => {
-      //   router.push("/")
-      // }, 5000)
+      // @ts-ignore
+      poster("/contact-forms", data)
+        .then(() => sendContactForm(data))
+        .then(() => router.push("/success-message"))
+    } else {
+      setMessagesError(true)
+      router.push("/contact#first").then(() => setMessagesError(false))
     }
   }
 
@@ -156,7 +152,11 @@ const ContactForm = ({ contact }) => {
         className="uppercase mb-12 text-center"
         dangerouslySetInnerHTML={{ __html: contact.titre }}
       ></div>
-      <div className="mb-12 h-[2px] bg-vert mx-auto mt-6 w-1/12"></div>
+      <div className="mb-12 h-[1px] bg-vert mx-auto mt-10 w-[100px] lg:w-[200px]"></div>
+      <div
+        className="mx-auto w-4/5 lg:w-3/4 max-w-[600px] mb-12"
+        dangerouslySetInnerHTML={{ __html: contact.entete }}
+      ></div>
       <div>
         {!message ? (
           <>
@@ -166,7 +166,7 @@ const ContactForm = ({ contact }) => {
               className="mx-auto w-4/5 lg:w-3/4 max-w-[600px]"
             >
               <div className="mx-auto grid gap-4 items-center">
-                <div className="pb-10">
+                <div className="closest pb-10">
                   <div className="flex flex-col grow min-w-full lg:min-w-[400px]">
                     <input
                       onChange={(event) => {
@@ -255,16 +255,16 @@ const ContactForm = ({ contact }) => {
                     )}
                   </div>
                 </div>
-                <div className="pb-10">
-                  <div className="flex">
+                <div className="closest pb-10">
+                  <div className="flex items-center">
                     <div
-                      className="cursor-pointer w-2/12 lg:w-1/12 lg:pt-1 pt-2"
+                      className="cursor-pointer min-w-[20px] lg:w-1/12 lg:pt-1 pt-2"
                       onClick={() => handleCheck()}
                     >
                       {checked.checkTerms ? checkedIcon : uncheckedIcon}
                     </div>
                     <div
-                      className="text-justify ml-4"
+                      className="text-justify ml-4 checkterms"
                       dangerouslySetInnerHTML={{
                         __html: contact.checkTerms.text,
                       }}

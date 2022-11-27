@@ -1,8 +1,8 @@
-import Layout from "./../components/Layout"
+import Layout from "../components/Layout"
 import React from "react"
-import AccueilAbout from "./../components/a-propos/accueil-a-propos"
+import AccueilAbout from "../components/a-propos/accueil-a-propos"
 import Binome from "../components/a-propos/binome"
-import IntroPresentation from "./../components/a-propos/introPresentation"
+import IntroPresentation from "../components/a-propos/introPresentation"
 import Presentation from "../components/a-propos/presentation"
 import Mission from "../components/a-propos/mission"
 import { fetcher } from "../api/backend"
@@ -13,10 +13,10 @@ import {
   URL_API_HOME,
   URL_API_LOGOS,
   URL_API_SCROLLTOP,
-} from "./../api/url"
+} from "../api/url"
 
 export default function About({
-  titrePage,
+  seo,
   logo,
   hamburger,
   footer,
@@ -33,7 +33,7 @@ export default function About({
       logo={logo}
       hamburger={hamburger}
       footer={footer}
-      titrePage={titrePage}
+      seo={seo}
     >
       <div id="a-propos">
         <AccueilAbout header={header} />
@@ -60,7 +60,7 @@ export async function getStaticProps() {
       introPresentation: about.data.attributes.introPresentation,
       presentation: about.data.attributes.presentation,
       mission: home.data.attributes.mission,
-      titrePage: about.data.attributes.titrePage,
+      seo: about.data.attributes.seo,
       logo: logos.data.attributes.logo,
       hamburger: hamburger.data.attributes.hamburger,
       footer: footer.data.attributes,

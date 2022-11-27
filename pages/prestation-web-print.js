@@ -1,8 +1,8 @@
 import Layout from "../components/Layout"
 import React from "react"
-import EntetePrestations from "./../components/prestation/entete-prestation"
+import EntetePrestations from "../components/prestation/entete-prestation"
 import Expertise from "../components/prestation/expertise"
-import Methodologie from "./../components/prestation/methodologie"
+import Methodologie from "../components/prestation/methodologie"
 import { fetcher } from "../api/backend"
 import {
   URL_API_HAMBURGER,
@@ -14,7 +14,7 @@ import {
 } from "../api/url"
 
 export default function Prestations({
-  titrePage,
+  seo,
   logo,
   hamburger,
   footer,
@@ -30,7 +30,7 @@ export default function Prestations({
       logo={logo}
       hamburger={hamburger}
       footer={footer}
-      titrePage={titrePage}
+      seo={seo}
     >
       <div id="prestation">
         <EntetePrestations header={header} />
@@ -54,7 +54,7 @@ export async function getStaticProps() {
       mission: home.data.attributes.mission,
       expertise: prestations.data.attributes.expertise,
       methodologie: prestations.data.attributes.methodologie,
-      titrePage: prestations.data.attributes.titrePage,
+      seo: prestations.data.attributes.seo,
       logo: logos.data.attributes.logo,
       hamburger: hamburger.data.attributes.hamburger,
       footer: footer.data.attributes,

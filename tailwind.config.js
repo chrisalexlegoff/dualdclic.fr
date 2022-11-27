@@ -36,7 +36,7 @@ module.exports = {
       },
       backgroundColor: {
         "accueil-entete-mobile": "var(--rouge-orange);",
-        "accueil-nous": "var(--blanc);",
+        "accueil-nous": "var(--vert-fond-2);",
         "accueil-projet": "var(--vert);",
         "accueil-pourquoi": "var(--blanc);",
         nav: "var(--fond-gris)",

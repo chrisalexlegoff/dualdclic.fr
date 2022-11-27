@@ -1,35 +1,23 @@
-.flip-card-outer {
-  width: 30%;
-  height: 300px;
-  margin: 25px 0;
-  min-width: 300px;
+.react-card-flipper {
+  margin: 3rem;
 }
-
-.flip-card-inner {
-  transform-style: preserve-3d;
-  transition: 0.5s linear 0.1s;
-  position: relative;
-  width: 100%;
-  height: inherit;
+@media screen and (max-width: 640px) {
+  .react-card-flipper {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
-
-.flip-card-inner:hover {
-  transform: rotateY(180deg);
+.react-card-front,
+.react-card-back {
+  width: fit-content !important;
+  height: auto !important;
 }
-
-.card {
-  backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.react-card-back p {
+  color: var(--bleu-fonce) !important;
 }
-
-.card.front {
-  transform: rotateY(0);
+.react-card-front h4 {
+  color: var(--rouge-orange) !important;
 }
-
-.card.back {
-  transform: rotateY(180deg);
+.react-card-front:hover h4 {
+  color: var(--blanc) !important;
 }

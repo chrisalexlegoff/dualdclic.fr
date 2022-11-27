@@ -17,7 +17,7 @@ const demanderUnDevis = ({
   logo,
   hamburger,
   footer,
-  titrePage,
+  seo,
   header,
   preambule,
   devis,
@@ -30,7 +30,7 @@ const demanderUnDevis = ({
       logo={logo}
       hamburger={hamburger}
       footer={footer}
-      titrePage={titrePage}
+      seo={seo}
     >
       <div id="devis">
         <EnteteDevis header={header} />
@@ -57,7 +57,7 @@ export async function getStaticProps() {
       mission: home.data.attributes.mission,
       preambule: devis.data.attributes.preambule,
       devis: devis.data.attributes.devis,
-      titrePage: devis.data.attributes.titrePage,
+      seo: devis.data.attributes.seo,
       logo: logos.data.attributes.logo,
       hamburger: hamburger.data.attributes.hamburger,
       footer: footer.data.attributes,

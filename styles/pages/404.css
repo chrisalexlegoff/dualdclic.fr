@@ -1,0 +1,4 @@
+/* error-page */
+#error-page p {
+  color: var(--noir-style);
+}

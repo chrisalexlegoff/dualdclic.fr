@@ -12,41 +12,29 @@ const Valeurs = ({ valeurs }) => {
           process.env.NEXT_PUBLIC_URL + valeurs.images.data[0].attributes.url
         })`,
       }}
-      className="bg-cover bg-bottom bg-no-repeat"
+      className="bg-cover bg-bottom bg-no-repeat py-32 lg:py-48"
     >
-      <div className="max-w-9xl mx-auto grid items-center text-center py-32">
+      <div className="max-w-9xl mx-auto grid items-center text-center">
         <div className="row-start-1 mx-auto w-3/4">
           <div
             className="uppercase"
             dangerouslySetInnerHTML={{ __html: valeurs.titre2 }}
           ></div>
-          <div className="h-[2px] bg-vert w-1/6 mx-auto mt-6"></div>
+          <div className="h-[1px] bg-vert w-[100px] lg:w-[200px] mx-auto mt-10"></div>
         </div>
         <div className="row-start-2 mx-auto lg:w-1/2 w-3/4">
           <div
-            className="my-12"
-            dangerouslySetInnerHTML={{ __html: valeurs.paragraphe }}
+            className="my-12 uppercase text-justify"
+            dangerouslySetInnerHTML={{ __html: valeurs.titre3 }}
           ></div>
         </div>
         <div className="row-start-3 mx-auto lg:w-1/2 w-3/4">
           <div
-            className="uppercase"
-            dangerouslySetInnerHTML={{ __html: valeurs.titre2bis }}
+            className="text-justify"
+            dangerouslySetInnerHTML={{ __html: valeurs.paragraphe }}
           ></div>
         </div>{" "}
-        <div className="row-start-4 mx-auto lg:w-1/2 w-3/4">
-          <div
-            className=""
-            dangerouslySetInnerHTML={{ __html: valeurs.titre4 }}
-          ></div>
-        </div>
-        <div className="row-start-5 mx-auto lg:w-1/2 w-3/4 mt-10">
-          <div
-            className=""
-            dangerouslySetInnerHTML={{ __html: valeurs.paragrapheBis }}
-          ></div>
-        </div>
-        <div className="row-start-6 flex flex-wrap mx-auto mt-8 mb-12 w-full lg:w-4/5 justify-evenly">
+        <div className="row-start-6 flex flex-wrap mx-auto mt-8 mb-12 w-full lg:w-11/12 justify-evenly">
           {cards.map((card) => (
             <FlipCard key={card.id} card={card} />
           ))}

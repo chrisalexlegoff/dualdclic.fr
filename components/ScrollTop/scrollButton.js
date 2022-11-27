@@ -29,11 +29,21 @@ const ScrollButton = ({ scrollTop }) => {
   }, [])
 
   const scrollImgMobile = LazyImage(
-    scrollTop.bg.data.attributes,
+    scrollTop.bg.data[0].attributes,
     "lazy",
     "40px"
   )
-  const scrollImg = LazyImage(scrollTop.bg.data.attributes, "lazy", "70px")
+  const scrollImg = LazyImage(scrollTop.bg.data[0].attributes, "lazy", "70px")
+  const scrollImgMobileHover = LazyImage(
+    scrollTop.bg.data[1].attributes,
+    "lazy",
+    "40px"
+  )
+  const scrollImgHover = LazyImage(
+    scrollTop.bg.data[1].attributes,
+    "lazy",
+    "70px"
+  )
 
   return (
     <>
@@ -42,8 +52,13 @@ const ScrollButton = ({ scrollTop }) => {
           visible ? "md:block" : "hidden"
         } hidden fixed right-8 bottom-8 z-10 cursor-pointer`}
       >
-        <div className="" onClick={scrollToTop}>
-          {scrollImg}
+        <div className="group">
+          <div className="block group-hover:hidden" onClick={scrollToTop}>
+            {scrollImg}
+          </div>
+          <div className="hidden group-hover:block" onClick={scrollToTop}>
+            {scrollImgHover}
+          </div>
         </div>
       </button>
       <button
@@ -51,8 +66,13 @@ const ScrollButton = ({ scrollTop }) => {
           visible ? "block" : "hidden"
         } md:hidden fixed right-4 bottom-4 z-10 cursor-pointer`}
       >
-        <div className="" onClick={scrollToTop}>
-          {scrollImgMobile}
+        <div className="group">
+          <div className="block group-hover:hidden" onClick={scrollToTop}>
+            {scrollImgMobile}
+          </div>
+          <div className="hidden group-hover:block" onClick={scrollToTop}>
+            {scrollImgMobileHover}
+          </div>
         </div>
       </button>
     </>

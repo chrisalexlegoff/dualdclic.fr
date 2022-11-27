@@ -18,7 +18,7 @@ const SuccessForm = ({ successForm }) => {
             className="uppercase mx-auto"
             dangerouslySetInnerHTML={{ __html: successForm.titre }}
           ></div>
-          <div className="h-[2px] bg-[#41EAD4] mx-auto mt-6 w-2/12"></div>
+          <div className="h-[1px] bg-[#41EAD4] mx-auto mt-10 w-[100px] lg:w-[200px]"></div>
         </div>
         <div className="">
           <div

@@ -26,7 +26,7 @@ const Informations = ({ informations }) => {
         className="uppercase text-center"
         dangerouslySetInnerHTML={{ __html: informations.titre }}
       ></div>
-      <div className="h-[2px] bg-vert mx-auto mt-6 w-[12%]"></div>
+      {/* <div className="h-[1px] bg-vert mx-auto mt-10 w-[100px] lg:w-[200px]"></div> */}
       <div className="flex lg:flex-row flex-col flex-wrap mx-auto lg:items-center lg:w-3/4 max-w-5xl lg:justify-around justify-start">
         <div className="flex items-center lg:mr-10 mt-16">
           {adressIcon}
