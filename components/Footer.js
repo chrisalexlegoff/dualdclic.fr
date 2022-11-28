@@ -15,7 +15,7 @@ const Footer = ({ footer }) => {
           <div className="lg:col-start-1 lg:row-start-1 lg:col-span-1 w-3/4 flex h-[350px] flex-col text-center justify-between lg:m-4 m-12">
             <div className="mx-auto w-1/2">{logo}</div>{" "}
             <div
-              className="mx-auto uppercase"
+              className="h4 mx-auto uppercase"
               dangerouslySetInnerHTML={{ __html: footer.titre4 }}
             ></div>
             <div
@@ -109,7 +109,7 @@ const Footer = ({ footer }) => {
                   {footer.contact.mail}
                 </a>{" "}
                 ou{" "}
-                <Link href="/contact">
+                <Link href="/contacter-freelance-nord">
                   <a className="underline contact">{footer.contact.lien}</a>
                 </Link>
               </p>
@@ -131,7 +131,7 @@ const Footer = ({ footer }) => {
           <div className="flex flex-col text-center justify-around">
             <div className="mx-auto">{logo}</div>
             <div
-              className="mx-auto uppercase my-4"
+              className="h4 mx-auto uppercase my-4"
               dangerouslySetInnerHTML={{ __html: footer.titre4 }}
             ></div>
             <div

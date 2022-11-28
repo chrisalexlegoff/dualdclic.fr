@@ -67,7 +67,7 @@ const Services = ({ services, expertise }) => {
             ))}
           </div>
           <div className="mx-auto w-full lg:w-1/3 row-start-6">
-            <Link href="/nos-prestations">
+            <Link href="/prestation-web-print">
               <a>
                 <button className="group bg-transparent lg:hover:bg-rouge-orange w-3/4 h-20 mx-auto block rounded-lg border-2 border-blanc lg:hover:border-rouge-orange px-4">
                   <span

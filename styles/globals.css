@@ -317,7 +317,8 @@
     letter-spacing: var(--spacing-h3);
   }
 
-  h4 {
+  h4,
+  .h4 > h3 {
     font-family: "RowdiesRegular";
     font-weight: var(--weight-h4);
     line-height: var(--height-h4);
@@ -413,7 +414,8 @@
     h3 {
       font-size: var(--size-2xl-h3);
     }
-    h4 {
+    h4,
+    .h4 > h3 {
       font-size: var(--size-2xl-h4);
     }
     .h5 > p {
@@ -465,7 +467,8 @@
     h3 {
       font-size: var(--size-xl-h3);
     }
-    h4 {
+    h4,
+    .h4 > h3 {
       font-size: var(--size-xl-h4);
     }
     .h5 > p {
@@ -525,7 +528,8 @@
       font-size: var(--size-lg-h3);
       line-height: var(--height-h3-phone);
     }
-    h4 {
+    h4,
+    .h4 > h3 {
       font-size: var(--size-lg-h4);
       font-weight: var(--weight-h4-phone);
       line-height: var(--height-h4-phone);
@@ -596,7 +600,8 @@
       font-size: var(--size-md-h3);
       line-height: var(--height-h3-phone);
     }
-    h4 {
+    h4,
+    .h4 > h3 {
       font-size: var(--size-md-h4);
       font-weight: var(--weight-h4-phone);
       line-height: var(--height-h4-phone);
@@ -667,7 +672,8 @@
       font-size: var(--size-sm-h3);
       line-height: var(--height-h3-phone);
     }
-    h4 {
+    h4,
+    .h4 > h3 {
       font-size: var(--size-sm-h4);
       font-weight: var(--weight-h4-phone);
       line-height: var(--height-h4-phone);

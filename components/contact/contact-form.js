@@ -133,7 +133,9 @@ const ContactForm = ({ contact }) => {
         .then(() => router.push("/success-message"))
     } else {
       setMessagesError(true)
-      router.push("/contact#first").then(() => setMessagesError(false))
+      router
+        .push("/contacter-freelance-nord#first")
+        .then(() => setMessagesError(false))
     }
   }
 

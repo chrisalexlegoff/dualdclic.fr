@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@react-pdf/renderer": "^3.0.1",
@@ -15,6 +16,7 @@
     "classnames": "^2.3.1",
     "cookies-next": "^2.1.1",
     "next": "12.2.0",
+    "next-sitemap": "^3.1.32",
     "nodemailer": "^6.8.0",
     "nprogress": "^0.2.0",
     "postcss-import": "^14.1.0",
