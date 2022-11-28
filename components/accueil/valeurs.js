@@ -40,7 +40,7 @@ const Valeurs = ({ valeurs }) => {
           ))}
         </div>
         <div className="mx-auto lg:w-1/3 w-3/4 row-start-7">
-          <Link href="/a-propos">
+          <Link href="/webdesign-developpement-freelance-nord">
             <a>
               <button className="group bg-transparent lg:hover:bg-rouge-orange h-20 mx-auto w-full block rounded-lg border-2 border-blanc lg:hover:border-rouge-orange">
                 <span

@@ -5,7 +5,8 @@ export const fetcher = async (url) => {
     const res = await Axios.get(
       process.env.NEXT_PUBLIC_API_URL + url + "?populate=deep"
     )
-    return res.data
+    const data = res?.data
+    return data
   } catch (err) {
     throw err.response.data
   }
