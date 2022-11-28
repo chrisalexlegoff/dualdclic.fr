@@ -1,6 +1,7 @@
 import React from "react"
 import Consent from "../lib/consent"
 import Seo from "../lib/seo"
+import StructuredData from "../lib/structured-data"
 import Footer from "./Footer"
 import Nav from "./Nav"
 import { ReadingProgress } from "./progress-bar/progress-bar"
@@ -11,6 +12,7 @@ const Layout = ({ children, seo, logo, hamburger, footer, scrollTop }) => {
   return (
     <div ref={target}>
       <Seo seo={seo} />
+      <StructuredData />
       <Nav logo={logo} hamburger={hamburger} target={target} />
       <ScrollButton scrollTop={scrollTop} />
       <ReadingProgress target={target} />
