@@ -3,7 +3,7 @@ import React from "react"
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang="fr">
       <Head />
       <body className="">
         <Main />
