@@ -3,7 +3,7 @@ import Axios from "axios"
 export const fetcher = async (url) => {
   try {
     const res = await Axios.get(
-      process.env.NEXT_PUBLIC_API_URL + url + "?populate=deep"
+      `${process.env.NEXT_PUBLIC_API_URL + url}?populate=deep`
     )
     const data = res?.data
     return data
@@ -14,7 +14,7 @@ export const fetcher = async (url) => {
 
 export const poster = async (url, data) => {
   try {
-    await Axios.post(process.env.NEXT_PUBLIC_API_URL + url + "?populate=deep", {
+    await Axios.post(`${process.env.NEXT_PUBLIC_API_URL + url}?populate=deep`, {
       data,
     })
   } catch (err) {
