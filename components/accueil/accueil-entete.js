@@ -6,12 +6,13 @@ import LazyImage from "./../../lib/lazy-images"
 const AccueilEntete = ({ header }) => {
   const imageDeco = LazyImage(
     header.imageDeco.data.attributes,
-    "lazy",
+    "eager",
     undefined,
     "",
     "",
     true
   )
+  console.log(header.imageDeco.data.attributes)
   const imageDecoMobile = LazyImage(
     header.bg.data.attributes,
     undefined,
@@ -22,7 +23,7 @@ const AccueilEntete = ({ header }) => {
   )
   const imageLogo = LazyImage(
     header.LogoAccueil.data[0].attributes,
-    "lazy",
+    "eager",
     undefined,
     "",
     "",
