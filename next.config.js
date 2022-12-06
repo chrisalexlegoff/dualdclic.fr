@@ -17,7 +17,7 @@ const nextConfig = {
   images: {
     domains: [`${process.env.NEXT_PUBLIC_IMAGES_DOMAIN}`],
   },
-  reactStrictMode: true,
+  // reactStrictMode: true,
 }
 const toggleMaintenance = false
 

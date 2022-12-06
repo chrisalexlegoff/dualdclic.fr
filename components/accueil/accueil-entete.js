@@ -12,7 +12,6 @@ const AccueilEntete = ({ header }) => {
     "",
     true
   )
-  console.log(header.imageDeco.data.attributes)
   const imageDecoMobile = LazyImage(
     header.bg.data.attributes,
     undefined,
@@ -31,6 +30,14 @@ const AccueilEntete = ({ header }) => {
   )
   const imageLogoMobile = LazyImage(
     header.LogoAccueil.data[1].attributes,
+    undefined,
+    undefined,
+    "",
+    "",
+    true
+  )
+  const enSavoirPlus = LazyImage(
+    header.enSavoirPlus.image.data.attributes,
     undefined,
     undefined,
     "",
@@ -91,15 +98,17 @@ const AccueilEntete = ({ header }) => {
           <Link href="/#nous">
             <a className="flex flex-col items-center">
               <span className="mb-2">{/* {header.enSavoirPlus.text} */}</span>
-              <Image
-                src={
+              {/* LazyImage(header.enSavoirPlus.image.data.attributes.url) */}
+              {/* src={
                   process.env.NEXT_PUBLIC_URL +
-                  header.enSavoirPlus.image.data.attributes.url
+                  
                 }
                 alt={header.enSavoirPlus.text}
-                width={175}
-                height={75}
-              />
+                // width={175}
+                // height={75}
+                layout="fill" */}
+              {/* /> */}
+              {enSavoirPlus}
             </a>
           </Link>
         </div>
