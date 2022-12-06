@@ -2,7 +2,6 @@ import { mailOptions, transporter } from "../../config/nodemailer"
 
 const handler = async (req, res) => {
   const data = req.body
-  console.log(data)
   if (data != null) {
     const styledKeys = "font-weight:bold; text-decoration: underline;"
     let nbrFiles = 0
