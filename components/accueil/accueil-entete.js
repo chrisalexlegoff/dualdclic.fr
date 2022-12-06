@@ -36,14 +36,6 @@ const AccueilEntete = ({ header }) => {
     "",
     true
   )
-  const enSavoirPlus = LazyImage(
-    header.enSavoirPlus.image.data.attributes,
-    undefined,
-    undefined,
-    "",
-    "",
-    true
-  )
 
   return (
     <div
@@ -96,19 +88,17 @@ const AccueilEntete = ({ header }) => {
         </div>
         <div className="md:row-start-5 md:col-span-2 animate-pulse">
           <Link href="/#nous">
-            <a className="flex flex-col items-center">
+            <a className="flex flex-col items-center h-full justify-end pb-6">
               <span className="mb-2">{/* {header.enSavoirPlus.text} */}</span>
-              {/* LazyImage(header.enSavoirPlus.image.data.attributes.url) */}
-              {/* src={
+              <Image
+                src={
                   process.env.NEXT_PUBLIC_URL +
-                  
+                  header.enSavoirPlus.image.data.attributes.url
                 }
                 alt={header.enSavoirPlus.text}
-                // width={175}
-                // height={75}
-                layout="fill" */}
-              {/* /> */}
-              {enSavoirPlus}
+                width={85}
+                height={83}
+              />
             </a>
           </Link>
         </div>

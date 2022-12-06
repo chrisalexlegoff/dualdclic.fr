@@ -17,7 +17,6 @@ import "swiper/css/scrollbar"
 
 import React from "react"
 import LazyImage from "./../../lib/lazy-images"
-import LazyImageResized from "../../lib/lazy-images-resized"
 
 const Carousel = ({ images }) => {
   SwiperCore.use([Autoplay])
@@ -38,7 +37,7 @@ const Carousel = ({ images }) => {
           {images.item.data.map((img) => {
             return (
               <SwiperSlide key={img.id}>
-                {LazyImageResized(img.attributes, "lazy", "responsive")}
+                {LazyImage(img.attributes)}
               </SwiperSlide>
             )
           })}
@@ -57,7 +56,7 @@ const Carousel = ({ images }) => {
           {images.item.data.map((img) => {
             return (
               <SwiperSlide key={img.id}>
-                {LazyImageResized(img.attributes, "lazy", "responsive")}
+                {LazyImage(img.attributes)}
               </SwiperSlide>
             )
           })}

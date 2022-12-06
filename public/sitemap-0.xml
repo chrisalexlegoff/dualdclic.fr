@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>http://localhost:3000</loc><lastmod>2022-12-04T23:05:55.563Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/contacter-freelance-nord</loc><lastmod>2022-12-04T23:05:55.563Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/demander-un-devis</loc><lastmod>2022-12-04T23:05:55.563Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/maintenance</loc><lastmod>2022-12-04T23:05:55.563Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/mentions-legales</loc><lastmod>2022-12-04T23:05:55.563Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/prestation-web-print</loc><lastmod>2022-12-04T23:05:55.563Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/projet-internet-et-imprimable</loc><lastmod>2022-12-04T23:05:55.563Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/success-message</loc><lastmod>2022-12-04T23:05:55.563Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>http://localhost:3000/webdesign-developpement-freelance-nord</loc><lastmod>2022-12-04T23:05:55.563Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000</loc><lastmod>2022-12-06T17:37:41.887Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/contacter-freelance-nord</loc><lastmod>2022-12-06T17:37:41.887Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/demander-un-devis</loc><lastmod>2022-12-06T17:37:41.887Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/maintenance</loc><lastmod>2022-12-06T17:37:41.887Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/mentions-legales</loc><lastmod>2022-12-06T17:37:41.887Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/prestation-web-print</loc><lastmod>2022-12-06T17:37:41.887Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/projet-internet-et-imprimable</loc><lastmod>2022-12-06T17:37:41.887Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/success-message</loc><lastmod>2022-12-06T17:37:41.887Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/webdesign-developpement-freelance-nord</loc><lastmod>2022-12-06T17:37:41.887Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
