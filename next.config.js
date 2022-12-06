@@ -16,15 +16,9 @@ const nextConfig = {
   },
   images: {
     domains: [`${process.env.NEXT_PUBLIC_IMAGES_DOMAIN}`],
-    //minimumCacheTTL: 60,
   },
-  //reactStrictMode: true,
+  // reactStrictMode: true,
 }
-const withPlugins = require("next-compose-plugins")
-const optimizedImages = require("next-optimized-images")
 const toggleMaintenance = false
 
-module.exports = withPlugins(
-  [optimizedImages, { handleImages: ["svg"] }],
-  nextConfig
-)
+module.exports = nextConfig
