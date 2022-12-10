@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  --text-color: #001529;
+  --twitter: #1da1f2;
+  --linkedin: #0077b5;
+  --github: #333333;
+  --website: #1890ff;
+  --gmail: #db4437;
+  --white: #ffffff;
+}
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Layout CSS */
+.ant-layout {
+  background: var(--white);
+}
+
+.ant-layout-header,
+.ant-layout-footer {
+  text-align: center;
+  background: var(--text-color);
+  color: var(--white);
+}
+
+/* Header CSS */
+.header_space {
+  width: 100%;
+  justify-content: space-between;
+  align-items: inherit;
+}
+.header_space_brand {
+  padding: 0px;
+  color: var(--white);
+}
+.header_space_brand:hover {
+  color: var(--white);
+}
+
+/* Social Card CSS */
+.social_card {
+  box-shadow: 0 13px 27px -5px rgb(50 50 93 / 25%),
+    0 8px 16px -8px rgb(0 0 0 / 30%), 0 -6px 16px -6px rgb(0 0 0 / 3%);
+  border-radius: 4px;
+  background-color: bisque;
+  color: var(--text-color);
+}
+
+.social_card_space {
+  width: 100%;
+}
+.social_image {
+  width: 80px !important;
+  height: 80px !important;
+  border-radius: 50%;
+}
+
+.social_button {
+  padding: 0px;
+}
+.social_button.twitter {
+  color: var(--twitter);
+}
+.social_button.linkedin {
+  color: var(--linkedin);
+}
+.social_button.github {
+  color: var(--github);
+}
+.social_button.website {
+  color: var(--website);
+}
+.social_button.gmail {
+  color: var(--gmail);
+}
+
+/* Profile Page CSS */
+.profile_page_card {
+  box-shadow: 0 13px 27px -5px rgb(50 50 93 / 25%),
+    0 8px 16px -8px rgb(0 0 0 / 30%), 0 -6px 16px -6px rgb(0 0 0 / 3%);
+  border-radius: 4px;
+}
+
+.profile_save_btn {
+  display: block;
+  margin-left: auto;
+}
+
+.login_submit_btn {
+  display: block;
+  width: 100%;
+}
+
+.alert_error {
+  margin-bottom: 8px;
+}
+
+.form_help_text {
+  text-align: center;
+}
+
+/* .ant-btn-primary {
+  background-color: #1677ff !important;
+} */

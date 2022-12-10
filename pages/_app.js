@@ -4,6 +4,7 @@ import Router from "next/router"
 import NProgress from "nprogress" //nprogress module
 import Script from "next/script"
 import { getCookie } from "cookies-next"
+import AuthProvider from "../context/providers/authProvider/AuthProvider"
 
 NProgress.configure({ showSpinner: false })
 // NProgress.configure({ minimum: 0.5 })
@@ -70,7 +71,9 @@ function MyApp({ Component, pageProps }) {
           }}
         />
       )}
-      <Component {...pageProps} />
+      <AuthProvider>
+        <Component {...pageProps} />
+      </AuthProvider>
     </>
   )
 }
