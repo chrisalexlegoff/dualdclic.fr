@@ -15,6 +15,7 @@
 @import "./pages/mentions-legales.css";
 @import "./carousel/carousel.css";
 @import "./pages/404.css";
+@import "./login/login.css";
 /* imports Tailwind */
 @tailwind base;
 @tailwind components;
