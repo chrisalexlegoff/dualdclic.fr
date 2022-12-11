@@ -1,9 +1,16 @@
-import { Button, Space } from "antd"
+import { Button, Space, Tooltip } from "antd"
 import React from "react"
 import { CgWebsite } from "react-icons/cg"
 import { useAuthContext } from "../../../context/AuthContext"
 import { useRouter } from "next/router"
 import { removeToken } from "../../../lib/helpers"
+import Link from "next/link"
+import {
+  AiOutlineCloseCircle,
+  AiOutlineLogin,
+  AiOutlineUserAdd,
+  AiTwotoneProfile,
+} from "react-icons/ai"
 
 const AppHeader = () => {
   const { user, setUser } = useAuthContext()
@@ -16,43 +23,65 @@ const AppHeader = () => {
 
   return (
     <Space className="header_space">
-      <Button className="header_space_brand" href="/dashboard" type="link">
-        <CgWebsite size={64} />
-      </Button>
+      <Link href="/dashboard">
+        <Tooltip title="Dashboard">
+          <a className="header_space_brand">
+            <CgWebsite size={64} />
+          </a>
+        </Tooltip>
+      </Link>
       <Space className="auth_buttons">
         {user ? (
           <>
-            <Button
-              className="auth_button_login"
+            <Link
               href="/users/profile"
-              type="link"
+              className="auth_button_login"
+              title="profil"
             >
-              {user.username}
-            </Button>
-            <Button
-              className="auth_button_signUp"
-              type="primary"
-              onClick={handleLogout}
-            >
-              Logout
-            </Button>
+              <Tooltip title={`Profil de ${user.username}`}>
+                <AiTwotoneProfile
+                  size={24}
+                  style={{ color: "white", cursor: "pointer" }}
+                />
+                {/* {user.username} */}
+              </Tooltip>
+            </Link>
+            {user.role_dashboard == "admin" && (
+              <Link href="/users/signup">
+                <Tooltip title="Ajouter un utilisateur">
+                  <AiOutlineUserAdd
+                    size={24}
+                    style={{ color: "white", cursor: "pointer" }}
+                  />
+                </Tooltip>
+              </Link>
+            )}
+            <Tooltip title="Se deconnecter">
+              <AiOutlineCloseCircle
+                onClick={handleLogout}
+                size={24}
+                style={{ color: "red", cursor: "pointer" }}
+              />
+            </Tooltip>
           </>
         ) : (
           <>
-            <Button
-              className="auth_button_login"
-              href="/users/signin"
-              type="link"
-            >
-              Login
-            </Button>
-            <Button
-              className="auth_button_signUp"
-              href="/users/signup"
-              type="primary"
-            >
-              SignUp
-            </Button>
+            <Link href="/users/signin">
+              <Tooltip title="Se connecter">
+                <AiOutlineLogin
+                  size={24}
+                  style={{ color: "white", cursor: "pointer" }}
+                />
+              </Tooltip>
+            </Link>
+            <Link href="/users/signup">
+              <Tooltip title="S'enregistrer">
+                <AiOutlineUserAdd
+                  size={24}
+                  style={{ color: "white", cursor: "pointer" }}
+                />
+              </Tooltip>
+            </Link>
           </>
         )}
       </Space>

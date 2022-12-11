@@ -24,6 +24,14 @@ code {
   background: var(--white);
 }
 
+.ant-layout a {
+  color: #1677ff;
+}
+
+.ant-layout a:hover {
+  color: var(--white);
+}
+
 .ant-layout-header,
 .ant-layout-footer {
   text-align: center;

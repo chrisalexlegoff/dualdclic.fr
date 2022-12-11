@@ -65,17 +65,17 @@ const Profile = () => {
           <Row gutter={[16, 16]}>
             <Col md={8} lg={8} sm={24} xs={24}>
               <Form.Item
-                label="Username"
+                label="Identifiant"
                 name="username"
                 rules={[
                   {
                     required: true,
-                    message: "Username is required!",
+                    message: "identifiant obligatoire!",
                     type: "string",
                   },
                 ]}
               >
-                <Input placeholder="Username" />
+                <Input placeholder="Identifiant" />
               </Form.Item>
             </Col>
             <Col md={8} lg={8} sm={24} xs={24}>
@@ -85,7 +85,7 @@ const Profile = () => {
                 rules={[
                   {
                     required: true,
-                    message: "Email is required!",
+                    message: "Email obligatoire!",
                     type: "email",
                   },
                 ]}
@@ -108,7 +108,7 @@ const Profile = () => {
             </Col>
             <Col span={24}>
               <Form.Item
-                label="About"
+                label="A propos"
                 name="about"
                 rules={[
                   {
@@ -118,7 +118,7 @@ const Profile = () => {
                   },
                 ]}
               >
-                <Input.TextArea placeholder="About" rows={6} />
+                <Input.TextArea placeholder="A propos de moi ..." rows={6} />
               </Form.Item>
             </Col>
             <Col md={8} lg={8} sm={24} xs={24}>

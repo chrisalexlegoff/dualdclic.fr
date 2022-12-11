@@ -50,7 +50,7 @@ const SignUp = () => {
         // set the user
         setUser(data.user)
 
-        message.success(`Welcome to Social Cards ${data.user.username}!`)
+        message.success(`Merci et bienvenue ${data.user.username}!`)
 
         router.push("/users/profile")
       }
@@ -66,7 +66,7 @@ const SignUp = () => {
     <AppLayout>
       <Row align="middle">
         <Col span={isDesktopView ? 8 : 24} offset={isDesktopView ? 8 : 0}>
-          <Card title="SignUp">
+          <Card title="S'enregistrer">
             {error ? (
               <Alert
                 className="alert_error"
@@ -83,7 +83,7 @@ const SignUp = () => {
               autoComplete="off"
             >
               <Form.Item
-                label="Username"
+                label="Identifiant"
                 name="username"
                 rules={[
                   {
@@ -92,7 +92,7 @@ const SignUp = () => {
                   },
                 ]}
               >
-                <Input placeholder="Username" />
+                <Input placeholder="Identifiant" />
               </Form.Item>
               <Form.Item
                 label="Email"
@@ -104,15 +104,15 @@ const SignUp = () => {
                   },
                 ]}
               >
-                <Input placeholder="Email address" />
+                <Input placeholder="Addresse Email" />
               </Form.Item>
 
               <Form.Item
-                label="Password"
+                label="Mot de passe"
                 name="password"
                 rules={[{ required: true }]}
               >
-                <Input.Password placeholder="Password" />
+                <Input.Password placeholder="Mot de passe" />
               </Form.Item>
 
               <Form.Item>
@@ -126,7 +126,8 @@ const SignUp = () => {
               </Form.Item>
             </Form>
             <Typography.Paragraph className="form_help_text">
-              Already have an account? <Link href="/users/signin">Sign In</Link>
+              Vous avez déjà un compte ?{" "}
+              <Link href="/users/signin">Connectez-vous</Link>
             </Typography.Paragraph>
           </Card>
         </Col>
