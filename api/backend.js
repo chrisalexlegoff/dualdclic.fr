@@ -35,12 +35,4 @@ export const uploadFile = async (file) => {
   } catch (error) {
     console.error("There was an error!", error)
   }
-
-  // .then((response) => {
-  //   const data = response.data
-  //   return data
-  // })
-  // .catch((error) => {
-
-  // })
 }

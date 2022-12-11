@@ -4,6 +4,7 @@ import {
   Col,
   Image,
   message,
+  Popconfirm,
   Row,
   Space,
   Spin,
@@ -14,15 +15,22 @@ import {
   AiFillTwitterCircle,
   AiFillLinkedin,
   AiFillGithub,
+  AiOutlineDelete,
 } from "react-icons/ai"
 
 import { CgWebsite } from "react-icons/cg"
 import { SiGmail } from "react-icons/si"
+import { useAuthContext } from "../../../context/AuthContext"
 import { API, AVATAR_API } from "../../../lib/constant"
+import { getToken } from "../../../lib/helpers"
 
 const SocialCards = () => {
   const [profiles, setProfiles] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+  const { user } = useAuthContext()
+  console.log(user)
+  // const confirm = (id) => deleteUser(id)
+  // const confirm = (id) => console.log(`${id} delete!`)
 
   const fetchProfiles = async () => {
     setIsLoading(true)
@@ -41,6 +49,27 @@ const SocialCards = () => {
   useEffect(() => {
     fetchProfiles()
   }, [])
+
+  const deleteUser = async (id, name) => {
+    setIsLoading(true)
+    try {
+      await fetch(`${API}/users/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          // set the auth token to the user's jwt
+          Authorization: `Bearer ${getToken()}`,
+        },
+      })
+      message.success(`${name} supprimé avec succès!`)
+    } catch (error) {
+      console.error(Error)
+      message.error(`Erreur pendant la suppression de ${name}!!`)
+    } finally {
+      setIsLoading(false)
+      fetchProfiles()
+    }
+  }
 
   if (isLoading) {
     return <Spin size="large" />
@@ -70,7 +99,38 @@ const SocialCards = () => {
                   `${AVATAR_API}?name=${profile.username}&background=1890ff&color=fff`
                 }
               />
-              <Typography.Title level={5}>{profile.username}</Typography.Title>
+              <Space wrap>
+                <Typography.Title level={5}>
+                  {profile.username}
+                </Typography.Title>
+                {profile.role_dashboard != "admin" &&
+                  user?.role_dashboard == "admin" && (
+                    <Popconfirm
+                      title={`Êtes vous certain de vouloir supprimer ${profile.username}`}
+                      onConfirm={() => deleteUser(profile.id, profile.username)}
+                      // onOpenChange={() => deleteUser(profile.id)}
+                      // onOpenChange={() => console.log("ok")}
+                    >
+                      <AiOutlineDelete
+                        size={16}
+                        style={{
+                          color: "red",
+                          paddingBottom: "0.3rem",
+                          height: "24px",
+                          cursor: "pointer",
+                        }}
+                      />
+                    </Popconfirm>
+                    // <Button
+                    //   className="social_button gmail pb-[0.3rem]"
+                    //   onClick={() => deleteUser(profile.id)}
+                    //   type="link"
+                    // >
+                    //
+                    // </Button>
+                  )}
+              </Space>
+
               <Typography.Paragraph>{RX(profile.about)}</Typography.Paragraph>
               <Space size={16} wrap>
                 {profile.twitter_username && (

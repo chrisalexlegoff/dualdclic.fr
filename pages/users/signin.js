@@ -56,7 +56,7 @@ const SignIn = () => {
         // set the user
         setUser(data.user)
 
-        message.success(`Welcome back ${data.user.username}!`)
+        message.success(`Bienvenue ${data.user.username}!`)
 
         router.push("/users/profile")
       }
@@ -72,7 +72,7 @@ const SignIn = () => {
     <AppLayout>
       <Row align="middle">
         <Col span={isDesktopView ? 8 : 24} offset={isDesktopView ? 8 : 0}>
-          <Card title="SignIn">
+          <Card title="Se connecter">
             {error ? (
               <Alert
                 className="alert_error"
@@ -98,15 +98,15 @@ const SignIn = () => {
                   },
                 ]}
               >
-                <Input placeholder="Email address" />
+                <Input placeholder="Votre adresse mail" />
               </Form.Item>
 
               <Form.Item
-                label="Password"
+                label="Mot de passe"
                 name="password"
                 rules={[{ required: true }]}
               >
-                <Input.Password placeholder="Password" />
+                <Input.Password placeholder="Mot de passe" />
               </Form.Item>
 
               <Form.Item>
@@ -120,7 +120,7 @@ const SignIn = () => {
               </Form.Item>
             </Form>
             <Typography.Paragraph className="form_help_text">
-              New to Social Cards? <Link href="/users/signup">Sign Up</Link>
+              Nouveau ? <Link href="/users/signup">Enregistrez-vous</Link>
             </Typography.Paragraph>
           </Card>
         </Col>
